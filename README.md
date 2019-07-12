@@ -1,2 +1,2 @@
 # Fun-with-Leetcode-in-Swift
- The solutions for my Leetcode attempts
+This project includes the codes that I tried and got all accepted on Leetcode. 
