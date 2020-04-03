@@ -8,7 +8,7 @@ class Solution {
         if s.isEmpty { return false }
         
         let signs = CharacterSet.init(charactersIn: "+-")
-
+        
         let fp = s.components(separatedBy: ".")
         
         if fp.count > 1 {

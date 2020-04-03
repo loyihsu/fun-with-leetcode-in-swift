@@ -4,7 +4,7 @@ class Solution {
     func romanToInt(_ s: String) -> Int {
         var cur = s.startIndex
         var amount = 0
-    
+        
         while cur != s.endIndex {
             if s[cur] == "I" {
                 if cur != s.index(s.startIndex, offsetBy: s.count-1) {
@@ -68,7 +68,7 @@ class Solution {
                 cur = s.index(after: cur)
             }
         }
-    
+        
         return amount
     }
 }
