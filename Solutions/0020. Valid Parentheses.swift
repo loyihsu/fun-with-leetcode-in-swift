@@ -2,22 +2,29 @@
 
 class Solution {
     func isValid(_ s: String) -> Bool {
-        var stack = [String]()
-        let open  = ["(","[","{"]
-        let close = [")","]","}"]
-        for k in s {
-            if (open.firstIndex(of: "\(k)") != nil) {
-                stack.insert("\(k)", at: 0)
-            } else if (close.firstIndex(of: "\(k)") != nil) {
-                if stack.isEmpty {
-                    return false
-                } else if open.firstIndex(of: stack.first!) != close.firstIndex(of: "\(k)") {
-                    return false
+        let matchedParentheses: [Character: Character] = ["(": ")", "{": "}", "[": "]"]
+        let opens = ["(", "{", "["]
+        let closes = [")", "}", "]"]
+        var stack = ""
+        
+        for c in s {
+            if opens.contains("\(c)") {
+                stack.append(c)
+            } else if closes.contains("\(c)") {
+                if let last = stack.last, let p = matchedParentheses[last] {
+                    if c == p {
+                        stack.removeLast()
+                    } else {
+                        return false
+                    }
                 } else {
-                    stack.remove(at: 0)
+                    return false
                 }
+            } else {
+                return false
             }
         }
+        
         return stack.isEmpty
     }
 }
