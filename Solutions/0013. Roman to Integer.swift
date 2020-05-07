@@ -1,74 +1,38 @@
 // Problem: https://leetcode.com/problems/roman-to-integer/
 
 class Solution {
+    func setupDictionary(_ dic: inout [Character : Int]) {
+        dic["E"] = 0        // Empty
+        dic["I"] = 1
+        dic["V"] = 5
+        dic["X"] = 10
+        dic["L"] = 50
+        dic["C"] = 100
+        dic["D"] = 500
+        dic["M"] = 1000
+    }
+    
     func romanToInt(_ s: String) -> Int {
-        var cur = s.startIndex
-        var amount = 0
+        var dictionary = [Character : Int]()
+        setupDictionary(&dictionary)
         
-        while cur != s.endIndex {
-            if s[cur] == "I" {
-                if cur != s.index(s.startIndex, offsetBy: s.count-1) {
-                    if s[s.index(after: cur)] == "V" {
-                        amount += 4
-                        cur = (s.index(after: cur) < s.endIndex) ? s.index(cur, offsetBy: 2) : s.index(after: cur)
-                    } else if s[s.index(after: cur)] == "X" {
-                        amount += 9
-                        cur = (s.index(after: cur) < s.endIndex) ? s.index(cur, offsetBy: 2) : s.index(after: cur)
-                    } else {
-                        amount += 1
-                        cur = s.index(after: cur)
-                    }
+        var output = 0
+        var prev: Character = "E"
+        
+        for char in s {
+            if let ch = dictionary[char], let pr = dictionary[prev] {
+                if ((char == "V" || char == "X") && prev == "I")
+                || ((char == "L" || char == "C") && prev == "X")
+                || ((char == "D" || char == "M") && prev == "C") {
+                    output = output + ch - pr * 2
                 } else {
-                    amount += 1
-                    cur = s.index(after: cur)
+                    output += ch
                 }
-            } else if s[cur] == "V" {
-                amount += 5
-                cur = s.index(after: cur)
-            } else if s[cur] == "X" {
-                if cur != s.index(s.startIndex, offsetBy: s.count-1) {
-                    if s[s.index(after: cur)] == "L" {
-                        amount += 40
-                        cur = (s.index(after: cur) < s.endIndex) ? s.index(cur, offsetBy: 2) : s.index(after: cur)
-                    } else if s[s.index(after: cur)] == "C" {
-                        amount += 90
-                        cur = (s.index(after: cur) < s.endIndex) ? s.index(cur, offsetBy: 2) : s.index(after: cur)
-                    } else {
-                        amount += 10
-                        cur = s.index(after: cur)
-                    }
-                } else {
-                    amount += 10
-                    cur = s.index(after: cur)
-                }
-            } else if s[cur] == "L" {
-                amount += 50
-                cur = s.index(after: cur)
-            } else if s[cur] == "C" {
-                if cur != s.index(s.startIndex, offsetBy: s.count-1) {
-                    if s[s.index(after: cur)] == "D" {
-                        amount += 400
-                        cur = (s.index(after: cur) < s.endIndex) ? s.index(cur, offsetBy: 2) : s.index(after: cur)
-                    } else if s[s.index(after: cur)] == "M" {
-                        amount += 900
-                        cur = (s.index(after: cur) < s.endIndex) ? s.index(cur, offsetBy: 2) : s.index(after: cur)
-                    } else {
-                        amount += 100
-                        cur = s.index(after: cur)
-                    }
-                } else {
-                    amount += 100
-                    cur = s.index(after: cur)
-                }
-            } else if s[cur] == "D" {
-                amount += 500
-                cur = s.index(after: cur)
-            } else if s[cur] == "M" {
-                amount += 1000
-                cur = s.index(after: cur)
             }
+            
+            prev = char
         }
         
-        return amount
+        return output
     }
 }
