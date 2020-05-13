@@ -1,4 +1,4 @@
-//Problem: https://leetcode.com/problems/palindrome-number/
+// Problem: https://leetcode.com/problems/palindrome-number/
 
 // Solution with conversion to String
 class Solution {

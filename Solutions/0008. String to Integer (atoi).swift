@@ -1,4 +1,4 @@
-//Problem: https://leetcode.com/problems/string-to-integer-atoi/
+// Problem: https://leetcode.com/problems/string-to-integer-atoi/
 
 class Solution {
     func myAtoi(_ str: String) -> Int {

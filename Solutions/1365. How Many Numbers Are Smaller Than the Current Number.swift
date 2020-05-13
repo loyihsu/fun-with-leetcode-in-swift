@@ -2,15 +2,13 @@
 
 class Solution {
     func smallerNumbersThanCurrent(_ nums: [Int]) -> [Int] {
-        var output = [Int]()
         var sorted = nums.sorted()
+        var posMap = [Int:Int]()    // Use a position map for faster searching 
         
-        for i in nums {
-            if let id = sorted.firstIndex(of: i) {
-                output.append(id)
-            }
+        for (index,value) in sorted.enumerated() where posMap[value] == nil {
+            posMap[value] = index
         }
         
-        return output
+        return nums.map { posMap[$0]! }
     }
 }

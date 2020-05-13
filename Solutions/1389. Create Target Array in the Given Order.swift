@@ -3,9 +3,8 @@
 class Solution {
     func createTargetArray(_ nums: [Int], _ index: [Int]) -> [Int] {
         var target = [Int]()
-        let max = nums.count
 
-        for i in 0..<max {
+        for i in 0..<nums.count {
             target.insert(nums[i], at: index[i])
         }
 
