@@ -1,3 +1,3 @@
-# Fun-with-Leetcode-in-Swift
+# Fun with Leetcode in Swift
 
-This project includes the codes that I tried and got all accepted on Leetcode.
+This project includes everything I played and passed on Leetcode.
