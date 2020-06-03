@@ -2,20 +2,14 @@
 
 class Solution {
     func canBeEqual(_ target: [Int], _ arr: [Int]) -> Bool {
-        var tg = [Int](repeating: 0, count: 1001), ar = [Int](repeating: 0, count: 1001)
+        guard target.count == arr.count else { return false }
+
+        var tg = [Int](repeating: 0, count: 1001)
+        var ar = [Int](repeating: 0, count: 1001)
         
-        let tgCount = target.count
-        let arCount = arr.count
-        
-        let max = tgCount > arCount ? tgCount : arCount
-        
-        for i in 0..<max {
-            if i < tgCount {
-                tg[target[i]] += 1   
-            }
-            if i < arCount {
-                ar[arr[i]] += 1
-            }    
+        for i in 0..<target.count {
+            tg[target[i]] += 1   
+            ar[arr[i]] += 1
         }
         
         for i in 0..<1001 {
