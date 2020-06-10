@@ -1,4 +1,5 @@
 // Problem: https://leetcode.com/problems/remove-outermost-parentheses/
+// O5
 
 class Solution {
     func chunk(_ S: String) -> [String] {

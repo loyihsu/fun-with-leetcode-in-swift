@@ -1,6 +1,5 @@
 // Problem: https://leetcode.com/problems/valid-number/
-
-import Foundation
+// O5
 
 class Solution {
     func checkValue(_ s: String, _ point: Bool) -> Bool {

@@ -1,4 +1,5 @@
 // Problem: https://leetcode.com/problems/merge-two-sorted-lists/
+// O5
 
 class Solution {
     func appendItem(_ newList: inout ListNode, _ newNode: ListNode) {
