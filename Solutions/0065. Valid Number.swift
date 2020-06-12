@@ -1,101 +1,90 @@
 // Problem: https://leetcode.com/problems/valid-number/
-// O5
 
 class Solution {
-    func checkValue(_ s: String, _ point: Bool) -> Bool {
-        // Deal with empty strings
-        if s.isEmpty { return false }
-        
-        let signs = CharacterSet.init(charactersIn: "+-")
-        
-        let fp = s.components(separatedBy: ".")
-        
-        if fp.count > 1 {
-            if point == false || fp.count > 2 {
-                return false
-            } else if fp.count == 2 {
-                if let first = fp.first, let last = fp.last {
-                    if first.isEmpty == true && last.isEmpty == true {
-                        // The two sides of the `.` cannot be both empty (`"."`)
-                        return false
-                    } else {
-                        if first.isEmpty == false {
-                            let f = first.components(separatedBy: signs)
-                            if f.count > 1 {
-                                if let ffirst = f.first, let flast = f.last {
-                                    if ffirst.isEmpty == true && flast.isEmpty == true && last.isEmpty == true {
-                                        // `"-."` is not valid.
-                                        return false
-                                    }
-                                    if ffirst.isEmpty == false {
-                                        //`"3-."` is not valid
-                                        return false
-                                    }
-                                }
-                            }
-                        }
-                        if last.isEmpty == false {
-                            // No more signs below floating point.
-                            if last.components(separatedBy: signs).count > 1 { 
-                                return false
-                            }
-                        }
-                    }
+    func removeLeadAndEndingSpaces(_ s: String) -> String {
+        var before = s.startIndex, after = s.index(before: s.endIndex)
+        while s[before] == " " && before < s.index(before: s.endIndex) {
+            before = s.index(after: before)
+        }
+        while s[after] == " " && before <= after && after > s.startIndex {
+            after = s.index(before: after)
+        }
+        return String(s[before...after])
+    }
+    func checkAllCharactersAre(in set: String, for str: String) -> Bool {
+        var dic = [Character : Bool]()
+        set.forEach { dic[$0] = true }
+        for s in str where dic[s] == nil {
+            return false
+        }
+        return true
+    }
+    func casesByE(_ str: String) -> [String] {
+        var output = [String](), temp = "", last = false
+        for (index, s) in str.enumerated() {
+            if s != "e" {
+                temp.append(s)
+            } else {
+                output.append(temp)
+                temp = ""
+                if index == str.count - 1 { last = true }
+            }
+        }
+        if last { output.append(temp) }
+        else if temp.isEmpty == false { output.append(temp) }
+        return output
+    }
+    func checkValidNumber(_ str: String, _ pointCheck: Bool, _ signCheck: Bool) -> Bool {
+        if signCheck == true {
+            if str.count < 2 { return false }
+            if let first = str.first {
+                if first != "+" && first != "-" { return false }
+            }
+        }
+        if pointCheck {
+            var before = "", after = "", swit = false
+            for s in str {
+                if s != "." && s != "+" && s != "-" { swit == false ? before.append(s) : after.append(s) }
+                swit = s == "." ? true : swit
+            }
+            if before.isEmpty && after.isEmpty { return false }
+            else { return !before.isEmpty || !after.isEmpty }
+        }
+        return true
+    }
+    func checkMaximumElements(_ str: String, _ pointLimit: Int = 1, _ signs: Bool = true) -> Bool {
+        guard str.isEmpty == false else { return false }
+        let limit = [".": pointLimit, "signs": signs == true ? 1 : 0]
+        var count = [".": 0, "signs": 0]
+        for s in str {
+            let subs = s == "+" || s == "-" ? "signs" : "\(s)"
+            if let limit = limit[subs] {
+                count[subs]! += 1
+                if count[subs]! > limit { return false }
+            }
+        }
+        return checkValidNumber(str, count["."]! > 0, count["signs"]! > 0)
+    }
+    func isNumber(_ s: String) -> Bool {
+        var testcase = removeLeadAndEndingSpaces(s)
+        guard testcase.isEmpty == false else { return false }
+        guard checkAllCharactersAre(in: "0123456789e+-.", for: testcase) == true else { return false }
+        let div = casesByE(testcase)
+        if div.count == 1 {
+            if let element = div.first {
+                return checkMaximumElements(element)
+            }
+        } else if div.count == 2 {
+            if let first = div.first, let last = div.last {
+                let decision1 = checkMaximumElements(first)
+                let decision2 = checkMaximumElements(last, 0, true)
+                if decision1 == decision2 {
+                    return decision1
+                } else {
+                    return false
                 }
             }
         }
-        
-        let sg = s.components(separatedBy: signs)
-        
-        if sg.count > 2 {
-            // There shouldn't be more than 2 signs.
-            return false
-        } else if sg.count == 2 {
-            if let first = sg.first {
-                // Nothing should go before any sign. (`"3+"` is not valid)
-                if first.isEmpty == false { return false }
-            }
-            
-            if let last = sg.last {
-                // Something should go after any sign. (`"+"` is not valid)
-                if last.isEmpty == true { return false }
-            }
-        }
-        
-        return true
-    }
-    
-    func isNumber(_ s: String) -> Bool {
-        // Deal with spaces
-        var str = ""
-        
-        let spaced = s.components(separatedBy: " ").filter { $0.isEmpty == false }
-        if spaced.count >= 2 { return false }
-        else if spaced.count == 0 { return false }
-        else if spaced.count == 1 {
-            if let first = spaced.first {
-                if first.isEmpty == true { return false }
-                else { str = first }
-            }
-        }
-        
-        // Check all accptable string characters
-        let letters = CharacterSet.init(charactersIn: "0123456789e+-.").inverted
-        if str.components(separatedBy: letters).count > 1 { return false }
-        
-        // Divide into cases with e
-        let strings = str.components(separatedBy: "e")
-        if strings.count == 1 {
-            if let first = strings.first { return checkValue(first, true) }
-        } else if strings.count == 2 {
-            if let first = strings.first {
-                if checkValue(first, true) == false { return false }
-            }
-            if let last = strings.last { return checkValue(last, false) }
-        } else {
-            return false
-        }
-        
-        return true
+        return false
     }
 }
