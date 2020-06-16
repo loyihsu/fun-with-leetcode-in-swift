@@ -1,41 +1,33 @@
 // Problem: https://leetcode.com/problems/maximum-69-number/
 
 class Solution {
-    func power(_ base: Int, _ power: Int) -> Int {
-        var output = 1
-        var p = power
-        
-        while p > 0 {
-            output *= base            
-            p -= 1
-        }
-        
-        return output
-    }
-    
     func maximum69Number (_ num: Int) -> Int {
-        var ints = [Int]()
-        var n = num
-        var output = 0
+        var n = [Int](repeating: 0, count: 4), input = num, output = 0, acc = 0
         
-        while n > 0 {
-            ints.insert(n % 10, at: 0)
-            n /= 10
+        while input > 0 {
+            n[acc] = input % 10
+            input /= 10
+            acc += 1
         }
         
-        for (index, value) in ints.enumerated() {
-            if value == 6 {
-                ints[index] = 9
-                break
+        var index = 3, flag = false
+        
+        while index >= 0 {
+            if n[index] != 0 {
+                if flag == false {
+                    if n[index] == 6 {
+                        output = 10 * output + 9
+                        flag = true
+                    } else {
+                        output = 10 * output + n[index]
+                    }
+                } else {
+                    output = 10 * output + n[index]
+                }
             }
+            index -= 1
         }
         
-        var length = ints.count
-        
-        for (index, value) in ints.enumerated() {
-            output += value * power(10, length - index - 1)
-        }
-     
         return output
     }
 }
