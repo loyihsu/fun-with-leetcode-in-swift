@@ -1,5 +1,4 @@
 // Problem: https://leetcode.com/problems/coin-change/
-// Inspired by discussion by @stasost (https://leetcode.com/problems/coin-change/discuss/673586/Swift-%2B-Sort-%2B-DP) 
 
 class Solution {    
     func coinChange(_ coins: [Int], _ amount: Int) -> Int {
@@ -10,8 +9,8 @@ class Solution {
         var chart = [Int](repeating: max, count: max)
         chart[0] = 0
         
-        for current in 1...amount {
-            for coin in coins where coin <= current {
+        for coin in coins where coin <= amount {
+            for current in coin..<max {
                 chart[current] = min(chart[current], 1 + chart[current-coin])
             }
         }
