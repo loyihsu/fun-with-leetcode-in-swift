@@ -2,10 +2,7 @@
 
 class Solution {
     func myPow(_ x: Double, _ n: Int) -> Double {
-        if n == 0 {
-            return 1
-        }
-        
+        guard n != 0 else { return 1 }
         var number = x, power = n
         
         if n < 0 {
