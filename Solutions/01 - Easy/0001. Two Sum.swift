@@ -2,23 +2,17 @@
 
 class Solution {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
-        var hashmap = [Int: Int]()
-        var output = [Int]()
-        var count = nums.count
-        
-        for n in 0..<count {
-            hashmap[nums[n]] = n
-        }
-        
-        for i in 0..<count {
-            if let value = hashmap[target - nums[i]] {
-                if value != i {
-                    output = [i, value]
+        var hashmap = [Int: Int](), output = [Int]()
+
+        nums.enumerated().forEach { hashmap[$1] = $0 }
+
+        for index in nums.indices {
+            if let value = hashmap[target - nums[index]], value != index {
+                    output = [index, value]
                     break
-                }
             }
         }
-        
+
         return output
     }
 }
