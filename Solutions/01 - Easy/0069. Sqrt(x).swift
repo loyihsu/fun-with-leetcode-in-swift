@@ -3,16 +3,10 @@
 class Solution {
     func mySqrt(_ x: Int) -> Int {
         guard x >= 2 else { return x }
-        
-        var output = -1
-        
-        var left = 0,  right = x
-        var mid = -1, cal = -1
-        
+        var output = -1, left = 0,  right = x, mid = -1, cal = -1
         while left <= right {
             mid = (left + right) / 2
             cal = mid * mid
-            
             if cal == x {
                 output = mid
                 break
@@ -23,7 +17,6 @@ class Solution {
                 left = mid + 1
             }
         }
-        
         return output
     }
 }

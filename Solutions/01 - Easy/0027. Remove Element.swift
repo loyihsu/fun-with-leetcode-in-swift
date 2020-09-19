@@ -2,20 +2,16 @@
 
 class Solution {
     func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
-        if nums.isEmpty { return 0 }
-        
-        var count = nums.count
-        var i = 0
-        
-        while i < count {
-            if nums[i] == val {
-                nums.remove(at: i)
+        guard nums.isEmpty == false else { return 0 }
+        var count = nums.count, index = 0
+        while index < count {
+            if nums[index] == val {
+                nums.remove(at: index)
                 count -= 1
-                continue
+            } else {
+                index += 1
             }
-            i += 1
         }
-        
         return count
     }
 }

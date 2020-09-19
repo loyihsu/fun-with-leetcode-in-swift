@@ -6,38 +6,23 @@ class Solution {
         guard haystack != needle else { return 0 }
         guard haystack.count >= needle.count else { return -1 }
         guard haystack.count != needle.count || haystack == needle else { return -1 }
-        
+        let stack = Array<Character>(haystack), need = Array<Character>(needle)
         var charMap = [Character : [Int]]()
-
-        for i in 0..<haystack.count {
-            let id = haystack.index(haystack.startIndex, offsetBy: i)
-            
-            if charMap[haystack[id]] == nil {
-                charMap[haystack[id]] = [i]
-            } else {
-                charMap[haystack[id]]!.append(i)
-            }
+        for index in 0..<haystack.count {
+            charMap[stack[index], default: []].append(index)
         }
         if let list = charMap[needle[needle.startIndex]] {
-            for l in list {
-                if l + needle.count - 1 < haystack.count {
-                    var flag = false
-                    for i in 0..<needle.count {
-                        let hid = haystack.index(haystack.startIndex, offsetBy: l+i)
-                        let nid = needle.index(needle.startIndex, offsetBy: i)
-                        
-                        if haystack[hid] != needle[nid] {
-                            flag = true
-                            break
-                        }
-                    }
-                    if flag == false {
-                        return l
-                    }
+            for item in list where item + needle.count - 1 < haystack.count  {
+                var flag = false
+                for index in 0..<needle.count where stack[item+index] != need[index] {
+                    flag = true
+                    break
+                }
+                if flag == false {
+                    return item
                 }
             }
         }
-
         return -1
     }
 }

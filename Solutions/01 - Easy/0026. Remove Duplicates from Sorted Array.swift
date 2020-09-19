@@ -2,20 +2,16 @@
 
 class Solution {
     func removeDuplicates(_ nums: inout [Int]) -> Int {
-        if nums.count < 2 { return nums.count }
-        
-        var i = 1
-        var length = nums.count
-        
+        guard nums.count >= 2 else { return nums.count }
+        var i = 1, length = nums.count
         while i < length {
             if nums[i] == nums[i-1] {
                 nums.remove(at: i)
                 length -= 1
-                continue
+            } else {
+                i += 1
             }
-            i += 1
         }
-                
         return length
     }
 }
