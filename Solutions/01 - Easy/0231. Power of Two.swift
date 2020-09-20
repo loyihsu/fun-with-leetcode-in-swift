@@ -2,11 +2,6 @@
 
 class Solution {
     func isPowerOfTwo(_ n: Int) -> Bool {
-        guard n > 0 else { return false }
-        var res = n
-        while res % 2 == 0 {
-            res /= 2
-        }
-        return res == 1
+        return n > 0 && (n & (n-1)) == 0
     }
 }
