@@ -2,13 +2,11 @@
 
 class Solution {
     func hammingWeight(_ n: Int) -> Int {
-        var output = 0
-        for count in 0..<32 {
-            let testcase = 1 << count
-            if testcase & n != 0 {
-                output += 1
-            }
+        var count = 0, num = n
+        while num != 0 {
+            num &= num - 1
+            count += 1
         }
-        return output
+        return count
     }
 }
