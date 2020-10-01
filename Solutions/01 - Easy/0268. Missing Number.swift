@@ -10,7 +10,10 @@ class Solution {
             max = $0 > max ? $0 : max
             sum += $0
         }
-        let diff = Array(0...max).reduce(0,+) - sum
+        var diff = -sum
+        for num in 0...max {
+            diff += num
+        }
         return diff == 0 && nums.contains(0) ? max+1 : diff
     }
 }
