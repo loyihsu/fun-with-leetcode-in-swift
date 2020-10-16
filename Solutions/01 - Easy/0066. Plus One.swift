@@ -3,9 +3,7 @@
 class Solution {
     func plusOne(_ digits: [Int]) -> [Int] {
         var output = digits, index = digits.count - 1, carry = false
-        
         output[index] += 1
-        
         while index >= 0 {
             if carry {
                 output[index] += 1
@@ -17,10 +15,9 @@ class Solution {
             }
             index -= 1
         }
-        
         if carry {
             output.insert(1, at: 0)
         }
-        
         return output
     }
+}

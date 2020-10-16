@@ -2,20 +2,14 @@
 
 class Solution {
     func lengthOfLastWord(_ s: String) -> Int {
-        var count = 0
-        var space = false
-        
-        for c in s {
-            if c == " " {
-                space = true
-            } else if space == true {
+        var count = 0, space = false
+        s.forEach {
+            if $0 == " " { space = true }
+            else if space == true {
                 count = 1
                 space = false
-            } else {
-                count += 1
-            }
+            } else { count += 1 }
         }
-        
         return count
     }
 }
