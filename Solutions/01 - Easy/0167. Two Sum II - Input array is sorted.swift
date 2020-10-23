@@ -2,18 +2,17 @@
 
 class Solution {
     func twoSum(_ numbers: [Int], _ target: Int) -> [Int] {
-        var i=0, j=numbers.count-1
-        
-        while i<j {
-            if numbers[i] + numbers[j] == target {
-                return [i+1, j+1]
-            } else if numbers[i] + numbers[j] > target {
-                j-=1
-            } else if numbers[i] + numbers[j] < target {
-                i+=1
-            }            
+        var index = 0, jndex = numbers.count-1, output = [Int]()
+        while index < jndex {
+            if numbers[index] + numbers[jndex] == target {
+                output = [index+1, jndex+1]
+                break
+            } else if numbers[index] + numbers[jndex] > target {
+                jndex -= 1
+            } else if numbers[index] + numbers[jndex] < target {
+                index += 1
+            }
         }
-        
-        return [Int]()
+        return output
     }
 }
