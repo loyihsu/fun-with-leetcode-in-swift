@@ -2,23 +2,13 @@
 
 class Solution {
     func singleNumber(_ nums: [Int]) -> Int {
-        var book = [Int : Int]()
-        var output = -1
-        
-        for n in nums {
-            if book[n] != nil {
-                book[n]! += 1
-            } else {
-                book[n] = 1
-            }
+        var book = [Int: Int](), output = -1
+        nums.forEach {
+            book[$0] = (book[$0] ?? 0) + 1
         }
-        
-        for i in book {
-            if i.value == 1 {
-                output = i.key 
-            }
+        for item in book where item.value == 1 {
+            output = item.key
         }
-        
         return output
     }
 }

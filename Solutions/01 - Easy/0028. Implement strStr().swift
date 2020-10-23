@@ -6,8 +6,8 @@ class Solution {
         guard haystack != needle else { return 0 }
         guard haystack.count >= needle.count else { return -1 }
         guard haystack.count != needle.count || haystack == needle else { return -1 }
-        let stack = Array<Character>(haystack), need = Array<Character>(needle)
-        var charMap = [Character : [Int]]()
+        let stack = [Character](haystack), need = [Character](needle)
+        var charMap = [Character: [Int]]()
         for index in 0..<haystack.count {
             charMap[stack[index], default: []].append(index)
         }

@@ -3,13 +3,13 @@
 class Solution {
     func removeDuplicates(_ nums: inout [Int]) -> Int {
         guard nums.count >= 2 else { return nums.count }
-        var i = 1, length = nums.count
-        while i < length {
-            if nums[i] == nums[i-1] {
-                nums.remove(at: i)
+        var index = 1, length = nums.count
+        while index < length {
+            if nums[index] == nums[index-1] {
+                nums.remove(at: index)
                 length -= 1
             } else {
-                i += 1
+                index += 1
             }
         }
         return length

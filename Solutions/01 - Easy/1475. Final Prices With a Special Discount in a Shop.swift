@@ -3,16 +3,12 @@
 class Solution {
     func finalPrices(_ prices: [Int]) -> [Int] {
         var output = prices
-        
-        for (i, price) in prices.enumerated() {
-            for j in i+1..<prices.count {
-                if prices[j] <= price {
-                    output[i] -= prices[j]
-                    break
-                }
+        for (index, price) in prices.enumerated() {
+            for jndex in index+1..<prices.count where prices[jndex] <= price {
+                output[index] -= prices[jndex]
+                break
             }
-        } 
-        
+        }
         return output
     }
 }

@@ -3,12 +3,10 @@
 class Solution {
     func shuffle(_ nums: [Int], _ n: Int) -> [Int] {
         var output = [Int]()
-        
-        for i in 0..<n {
-            output.append(nums[i])
-            output.append(nums[i+n])
+        for index in 0..<n {
+            output.append(nums[index])
+            output.append(nums[index+n])
         }
-        
         return output
     }
 }

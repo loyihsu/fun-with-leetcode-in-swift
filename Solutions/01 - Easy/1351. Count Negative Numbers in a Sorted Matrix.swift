@@ -2,18 +2,13 @@
 
 class Solution {
     func countNegatives(_ grid: [[Int]]) -> Int {
-        let lineLength = grid[0].count
         var count = 0
-        
-        for l in 0..<grid.count {
-            for index in 0..<lineLength {
-                if grid[l][index] < 0 {
-                    count += lineLength - index
-                    break
-                }
+        for index in grid.indices {
+            for jndex in grid[index].indices where grid[index][jndex] < 0 {
+                count += grid[index].count - jndex
+                break
             }
         }
-        
         return count
     }
 }

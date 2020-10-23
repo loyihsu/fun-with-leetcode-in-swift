@@ -1,43 +1,20 @@
 // Problem: https://leetcode.com/problems/maximum-depth-of-binary-tree/
 
 class Solution {
+    func max(of array: [Int]) -> Int {
+        var max = Int.min
+        array.forEach { max = $0 > max ? $0 : max }
+        return max
+    }
     func maxDepth(_ root: TreeNode?) -> Int {
-        if root == nil {
-            return 0
+        guard let tree = root else { return 0 }
+        var temp = [Int]()
+        if let left = tree.left {
+            temp.append(maxDepth(left))
         }
-        
-        var maxDepth = 1
-        var curDepth = 1
-        
-        var queue = [(TreeNode, Int)]()
-        
-        var temp = root
-        
-        while temp != nil {
-            if temp!.left == nil && temp!.right == nil {
-                if queue.count == 0 {
-                    break
-                }
-            } else {
-                if let t = temp, let left = t.left {
-                    queue.append((left,curDepth+1))
-                }
-                
-                if let t = temp, let right = t.right {
-                    queue.append((right,curDepth+1))
-                }
-            }
-            
-            let first = queue.removeFirst()
-            
-            temp = first.0
-            curDepth = first.1
-            
-            if curDepth > maxDepth {
-                maxDepth = curDepth
-            }
+        if let right = tree.right {
+            temp.append(maxDepth(right))
         }
-        
-        return maxDepth
+        return temp.isEmpty ? 1 : max(of: temp) + 1
     }
 }
