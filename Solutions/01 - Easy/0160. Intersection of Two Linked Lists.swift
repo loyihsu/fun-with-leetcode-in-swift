@@ -9,7 +9,6 @@ class Solution {
         }
         return res
     }
-    
     func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
         var a = createStack(from: headA), b = createStack(from: headB), res: ListNode? = nil
         while a.isEmpty == false && b.isEmpty == false {

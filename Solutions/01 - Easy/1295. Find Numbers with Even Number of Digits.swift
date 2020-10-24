@@ -2,9 +2,7 @@
 
 class Solution {
     func findNumbers(_ nums: [Int]) -> Int {
-        var count = 0
-        var dig = 0
-        
+        var count = 0, dig = 0
         for n in nums {
             dig = 0
             var t = n
@@ -15,8 +13,7 @@ class Solution {
             if dig % 2 == 0 {
                 count += 1
             }
-        }
-        
+        } 
         return count
     }
 }

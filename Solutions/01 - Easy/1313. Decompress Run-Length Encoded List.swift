@@ -2,10 +2,8 @@
 
 class Solution {
     func decompressRLElist(_ nums: [Int]) -> [Int] {
-        var count = 0
-        var output = [Int]()
-        
-        for n in 0..<nums.count {
+        var count = 0, output = [Int]()
+        for n in nums.indices {
             if n % 2 == 0 {
                 count = nums[n]
             } else if n % 2 == 1 {
@@ -14,7 +12,6 @@ class Solution {
                 }
             }
         }
-        
         return output
     }
 }

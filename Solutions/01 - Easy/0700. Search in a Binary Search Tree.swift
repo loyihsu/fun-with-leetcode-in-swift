@@ -2,16 +2,16 @@
 
 class Solution {
     func searchBST(_ root: TreeNode?, _ val: Int) -> TreeNode? {
-        if let r = root {
-            if r.val > val {
-                return searchBST(r.left, val)
-            } else if r.val < val {
-                return searchBST(r.right, val)
-            } else if r.val == val {
-                return r
+        var cur = root
+        while let temp = cur {
+            if val == temp.val {
+                return temp
+            } else if val > temp.val {
+                cur = temp.right
+            } else {
+                cur = temp.left
             }
         }
-        
         return nil
     }
 }

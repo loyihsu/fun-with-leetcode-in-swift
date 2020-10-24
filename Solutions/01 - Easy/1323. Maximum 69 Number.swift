@@ -2,16 +2,12 @@
 
 class Solution {
     func maximum69Number (_ num: Int) -> Int {
-        var n = [Int](repeating: 0, count: 4), input = num, output = 0, acc = 0
-        
+        var n = [Int](repeating: 0, count: 4), input = num, output = 0, acc = 0, index = 3, flag = false
         while input > 0 {
             n[acc] = input % 10
             input /= 10
             acc += 1
         }
-        
-        var index = 3, flag = false
-        
         while index >= 0 {
             if n[index] != 0 {
                 if flag == false {
@@ -27,7 +23,6 @@ class Solution {
             }
             index -= 1
         }
-        
         return output
     }
 }

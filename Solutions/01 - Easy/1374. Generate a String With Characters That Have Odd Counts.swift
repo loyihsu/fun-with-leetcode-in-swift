@@ -2,7 +2,7 @@
 
 class Solution {
     func generateTheString(_ n: Int) -> String {
-        var output = Array<Character>(repeating: "a", count: n)
+        var output = [Character](repeating: "a", count: n)
         if output.count % 2 == 0 {
             output[output.count-1] = "b"
         }
