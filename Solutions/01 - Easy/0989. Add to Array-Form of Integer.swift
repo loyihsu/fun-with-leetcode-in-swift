@@ -27,7 +27,6 @@ class Solution {
             output.insert(carry, at: 0)
             carry = 0
         }
-        
         return output
     }
     func addToArrayForm(_ A: [Int], _ K: Int) -> [Int] {
@@ -43,7 +42,6 @@ class Solution {
             output.insert(k[posK], at: 0)
             posK -= 1
         }
-        
         return normalise(output)
     }
 }

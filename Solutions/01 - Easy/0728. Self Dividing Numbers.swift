@@ -2,11 +2,7 @@
 
 class Solution {
     func selfDividingNumbers(_ left: Int, _ right: Int) -> [Int] {
-        var output = [Int]()
-        var n = 0
-        var k = 0
-        var flag = true
-        
+        var output = [Int](), n = 0, k = 0, flag = true
         for num in left...right {
             n = num
             flag = true
@@ -17,20 +13,16 @@ class Solution {
                 } else {
                     k = n % 10
                 }
-                
                 if num % k != 0 {
                     flag = false
                     break
                 }
-                
                 n /= 10
             }
-            
             if flag == true {
                 output.append(num)
             }
         }
-        
         return output
     }
 }
