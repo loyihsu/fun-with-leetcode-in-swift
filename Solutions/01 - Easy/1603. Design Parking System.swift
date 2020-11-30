@@ -1,18 +1,23 @@
 // Problem: https://leetcode.com/problems/design-parking-system/
 
 class ParkingSystem {
-    var vacants = [0, 0, 0, 0]
+    var big = 0, medium = 0, small = 0
     init(_ big: Int, _ medium: Int, _ small: Int) {
-        vacants[1] = big
-        vacants[2] = medium
-        vacants[3] = small
-    }
-    
+        self.big = big
+        self.medium = medium
+        self.small = small
+    }    
     func addCar(_ carType: Int) -> Bool {
-        if vacants[carType] == 0 { return false }
-        else {
-            vacants[carType] -= 1
-            return true
+        if carType == 1 {
+            if big == 0 { return false }
+            big -= 1
+        } else if carType == 2 {
+            if medium == 0 { return false }
+            medium -= 1
+        } else {
+            if small == 0 { return false }
+            small -= 1
         }
+        return true
     }
 }
