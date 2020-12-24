@@ -13,7 +13,7 @@ class Solution {
                 right = mid - 1
             }
         }
-        return nil        
+        return nil
     }
     func findKthPositive(_ arr: [Int], _ k: Int) -> Int {
         var counter = 0, testcase = 1

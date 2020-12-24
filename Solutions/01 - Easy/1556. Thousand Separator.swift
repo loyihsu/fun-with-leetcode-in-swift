@@ -8,7 +8,7 @@ class Solution {
                 string.insert(".", at: index)
                 count = 0
             } else {
-                count += 1 
+                count += 1
             }
             index -= 1
         }

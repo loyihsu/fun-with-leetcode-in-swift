@@ -4,7 +4,7 @@ class Solution {
     func frequencySort(_ nums: [Int]) -> [Int] {
         var output = nums, pos = 0, map = [Int: Int]()
         nums.forEach { map[$0, default: 0] += 1 }
-        let sortedMap = map.sorted { 
+        let sortedMap = map.sorted {
             if $0.value == $1.value {
                 return $0.key > $1.key
             } else {
