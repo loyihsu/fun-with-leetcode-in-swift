@@ -4,7 +4,7 @@ class Solution {
     func imageSmoother(_ M: [[Int]]) -> [[Int]] {
         var output = M
         for index in M.indices {
-            for jndex in M[0].indices {                
+            for jndex in M[0].indices {
                 let vstarter = index - 1 >= 0 ? index - 1 : 0
                 let vender = index + 1 < M.count ? index + 1 : M.count - 1
                 let hstarter = jndex - 1 >= 0 ? jndex - 1 : 0

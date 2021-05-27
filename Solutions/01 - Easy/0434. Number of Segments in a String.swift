@@ -8,7 +8,7 @@ class Solution {
                 if temp {
                     temp = false
                     count += 1
-                } 
+                }
             } else {
                 temp = true
             }

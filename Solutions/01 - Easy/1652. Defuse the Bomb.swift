@@ -9,7 +9,7 @@ class Solution {
                 let constant = k >= 0 ? 1 : code.count
                 sum += code[(idx + offset + constant)%code.count]
             }
-            temp[idx] = sum            
+            temp[idx] = sum
         }
         return temp
     }

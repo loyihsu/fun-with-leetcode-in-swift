@@ -4,7 +4,7 @@ class Solution {
     func makeSum(of tree: TreeNode?, _ sum: Int) -> Int {
         guard tree != nil else { return sum }
         var tempSum = sum
-        
+
         if tree!.val % 2 == 0 {
             if let value = tree!.left?.left?.val {
                 tempSum += value
@@ -19,12 +19,12 @@ class Solution {
                 tempSum += value
             }
         }
-        
+
         tempSum = makeSum(of: tree!.left, tempSum)
         tempSum = makeSum(of: tree!.right, tempSum)
         return tempSum
     }
-    
+
     func sumEvenGrandparent(_ root: TreeNode?) -> Int {
         return makeSum(of: root, 0)
     }

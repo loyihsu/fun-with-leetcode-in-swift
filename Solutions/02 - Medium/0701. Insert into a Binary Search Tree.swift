@@ -4,7 +4,7 @@ class Solution {
     func insertIntoBST(_ root: TreeNode?, _ val: Int) -> TreeNode? {
         guard root != nil else { return TreeNode.init(val) }
         var temp = root, sig = false
-        
+
         while !sig {
             if temp!.val > val {
                 if temp!.left != nil {
@@ -22,7 +22,7 @@ class Solution {
                 }
             }
         }
-        
+
         return root
     }
 }

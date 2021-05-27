@@ -22,7 +22,7 @@ class Solution {
         qsort(&nums, min, i-1)
         qsort(&nums, i+1, max)
     }
-    
+
     func sortColors(_ nums: inout [Int]) {
         qsort(&nums, 0, nums.count-1)
     }

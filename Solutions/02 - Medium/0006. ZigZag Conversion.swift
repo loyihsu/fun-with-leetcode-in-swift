@@ -2,7 +2,7 @@
 
 class Solution {
     func convert(_ s: String, _ numRows: Int) -> String {
-        guard numRows > 1 else { return s } 
+        guard numRows > 1 else { return s }
         var temp = [[Character]](repeating: [], count: numRows)
         var idx = 0, flag = false
         for char in s {

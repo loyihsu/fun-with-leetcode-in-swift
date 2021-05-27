@@ -3,11 +3,11 @@
 class OrderedStream {
     var list: [String?]
     var ptr = 0
-    
+
     init(_ n: Int) {
         list = [String?](repeating: nil, count: n)
     }
-    
+
     func insert(_ id: Int, _ value: String) -> [String] {
         list[id-1] = value
         var output = [String]()

@@ -5,7 +5,7 @@ class Solution {
         var temp = root!.val
         return check(root!, root!.val)
     }
-    
+
     func check(_ tree: TreeNode, _ value: Int) -> Bool {
         guard tree.val == value else { return false }
         if let left = tree.left, check(left, value) == false {

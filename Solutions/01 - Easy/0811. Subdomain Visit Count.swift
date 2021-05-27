@@ -9,8 +9,7 @@ class Solution {
             let dotSplit = countSplit.popLast()!.components(separatedBy: ".").reversed()
             var temp = ""
             for value in dotSplit {
-                if temp.isEmpty { temp = value }
-                else { temp = "\(value).\(temp)" }
+                if temp.isEmpty { temp = value } else { temp = "\(value).\(temp)" }
                 counter[temp] = (counter[temp] ?? 0) + count
             }
         }

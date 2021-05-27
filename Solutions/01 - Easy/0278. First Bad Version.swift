@@ -1,6 +1,6 @@
 // Problem: https://leetcode.com/problems/first-bad-version/
 
-class Solution : VersionControl {
+class Solution: VersionControl {
     func firstBadVersion(_ n: Int) -> Int {
         var left = 0, right = n, temp = n
         while left <= right {

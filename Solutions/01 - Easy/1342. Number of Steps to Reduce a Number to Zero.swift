@@ -8,7 +8,7 @@ class Solution {
                 n /= 2
             } else {
                 n -= 1
-            }  
+            }
             steps += 1
         }
         return steps

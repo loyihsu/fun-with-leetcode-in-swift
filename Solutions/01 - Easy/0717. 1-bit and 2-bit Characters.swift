@@ -13,6 +13,6 @@ class Solution {
                 index += 1
             }
         }
-        return false 
+        return false
     }
 }

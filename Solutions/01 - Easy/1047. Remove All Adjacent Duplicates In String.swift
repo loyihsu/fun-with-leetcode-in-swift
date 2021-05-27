@@ -12,7 +12,7 @@ class Solution {
                 output.append(char)
             }
         }
-        
+
         return output
     }
 }

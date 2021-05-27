@@ -3,7 +3,7 @@
 class Solution {
     func peakIndexInMountainArray(_ A: [Int]) -> Int {
         var maxIndex = -1, max = -1
-        
+
         for (pos, val) in A.enumerated() {
             if val > max {
                 maxIndex = pos
@@ -12,7 +12,7 @@ class Solution {
                 break
             }
         }
-        
+
         return maxIndex
     }
 }

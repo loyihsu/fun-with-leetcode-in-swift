@@ -1,9 +1,9 @@
 // Problem: https://leetcode.com/problems/first-unique-character-in-a-string/
 
 class Solution {
-    func generateLowercasedMap() -> [Character : Int] {
+    func generateLowercasedMap() -> [Character: Int] {
         let str = Array("abcdefghijklmnopqrstuvwxyz")
-        var output = [Character : Int]()
+        var output = [Character: Int]()
         for (index, value) in str.enumerated() {
             output[value] = index
         }

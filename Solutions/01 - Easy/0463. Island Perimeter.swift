@@ -5,7 +5,7 @@ class Solution {
         var output = 0
         let height = grid.count, width = grid[0].count
         for idx in grid.indices {
-            for jdx in grid[idx].indices where grid[idx][jdx] == 1 {                
+            for jdx in grid[idx].indices where grid[idx][jdx] == 1 {
                 if jdx == 0 || grid[idx][jdx-1] == 0 {
                     output += 1
                 }

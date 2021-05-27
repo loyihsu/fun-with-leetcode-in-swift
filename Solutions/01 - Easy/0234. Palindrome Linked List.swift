@@ -12,7 +12,7 @@ class Solution {
             if arr[left] != arr[right] {
                 return false
             }
-            (left, right) = (left+1,right-1)    
+            (left, right) = (left+1, right-1)
         }
         return true
     }

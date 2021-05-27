@@ -15,7 +15,7 @@ class Solution {
         }
         return max.1
     }
-    
+
     func thirdMax(_ nums: [Int]) -> Int {
         var processedArray = Array(Set(nums))
         guard processedArray.count >= 3 else { return processedArray.max()! }

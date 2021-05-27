@@ -3,17 +3,15 @@
 class MinStack {
     var min = Int.max
     var array = [Int]()
-    
+
     /** initialize your data structure here. */
-    init() {
-        
-    }
-    
+    init() { }
+
     func push(_ x: Int) {
         array.append(x)
         min = x < min ? x : min
     }
-    
+
     func pop() {
         let last = array.popLast()!
         if min == last {
@@ -21,13 +19,12 @@ class MinStack {
             array.forEach { min = $0 < min ? $0 : min }
         }
     }
-    
+
     func top() -> Int {
         return array.last!
     }
-    
+
     func getMin() -> Int {
         return min
     }
 }
-

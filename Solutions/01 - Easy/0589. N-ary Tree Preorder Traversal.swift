@@ -7,7 +7,7 @@ class Solution {
             output = [r.val]
             for c in r.children {
                 output += preorder(c)
-            }        
+            }
         }
         return output
     }

@@ -4,7 +4,7 @@ class Solution {
     func minOperations(_ s: String) -> Int {
         var counterA = 0, counterB = 0
         var signalA = false, signalB = true
-        
+
         for item in s {
             if item == "1" {
                 if signalA == false {

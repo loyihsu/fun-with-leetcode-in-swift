@@ -2,7 +2,7 @@
 
 extension Array {
     mutating func popFirst() -> Element? {
-        return self.isEmpty ? nil : self.removeFirst()    
+        return self.isEmpty ? nil : self.removeFirst()
     }
 }
 class Solution {

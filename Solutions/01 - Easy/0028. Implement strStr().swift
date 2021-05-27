@@ -12,7 +12,7 @@ class Solution {
             charMap[stack[index], default: []].append(index)
         }
         if let list = charMap[needle[needle.startIndex]] {
-            for item in list where item + needle.count - 1 < haystack.count  {
+            for item in list where item + needle.count - 1 < haystack.count {
                 var flag = false
                 for index in 0..<needle.count where stack[item+index] != need[index] {
                     flag = true

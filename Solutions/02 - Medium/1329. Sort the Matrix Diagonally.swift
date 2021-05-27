@@ -14,7 +14,7 @@ class Solution {
             position = (position.0 + 1, position.1 + 1)
         }
     }
-    
+
     func diagonalSort(_ mat: [[Int]]) -> [[Int]] {
         var output = mat
         for idx in output[0].indices {

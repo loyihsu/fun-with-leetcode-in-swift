@@ -5,7 +5,9 @@ class Solution {
         guard coordinates.count > 2 else { return true }
         var previous = Double(coordinates[1][1] - coordinates[0][1])/Double(coordinates[1][0] - coordinates[0][0])
         for idx in 2..<coordinates.count {
-            let current = Double(coordinates[idx][1] - coordinates[idx-1][1])/Double(coordinates[idx][0] - coordinates[idx-1][0])
+            let one = Double(coordinates[idx][1] - coordinates[idx-1][1])
+            let zero = Double(coordinates[idx][0] - coordinates[idx-1][0])
+            let current = one / zero
             if abs(previous) == Double.infinity && abs(previous) == abs(current) {
                 continue
             }

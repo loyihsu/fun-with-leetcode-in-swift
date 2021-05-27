@@ -10,7 +10,7 @@ class Solution {
             while left < right {
                 let sum = sorted[idx] + sorted[left] + sorted[right]
                 if sum == 0 {
-                    result.insert([sorted[idx],sorted[left],sorted[right]])
+                    result.insert([sorted[idx], sorted[left], sorted[right]])
                     left += 1
                     while sorted[left] == sorted[left - 1] && left < right {
                         left += 1
@@ -20,7 +20,7 @@ class Solution {
                 } else {
                     left += 1
                 }
-            }            
+            }
         }
         return Array(result)
     }

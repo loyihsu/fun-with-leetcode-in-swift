@@ -2,7 +2,7 @@
 
 extension Array {
     subscript(safe idx: Int) -> Element? {
-        return idx < 0 || idx >= self.count ? nil : self[idx] 
+        return idx < 0 || idx >= self.count ? nil : self[idx]
     }
 }
 class Solution {
@@ -10,7 +10,11 @@ class Solution {
     func binarySearch(in jobs: [Job], val: Int, _ left: Int, _ right: Int) -> Int {
         guard left <= right else { return left - 1 }
         let mid = (left + right) / 2
-        return val < jobs[mid].range.upperBound ? binarySearch(in: jobs, val: val, left, right - 1) : binarySearch(in: jobs, val: val, mid + 1, right)
+        if val < jobs[mid].range.upperBound {
+            binarySearch(in: jobs, val: val, left, right - 1)
+        } else {
+            binarySearch(in: jobs, val: val, mid + 1, right)
+        }
     }
     func jobScheduling(_ startTime: [Int], _ endTime: [Int], _ profit: [Int]) -> Int {
         let ranges: [Job] = startTime.indices.map { idx in

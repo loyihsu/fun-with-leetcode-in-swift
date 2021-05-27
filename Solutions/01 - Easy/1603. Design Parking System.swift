@@ -6,7 +6,7 @@ class ParkingSystem {
         self.big = big
         self.medium = medium
         self.small = small
-    }    
+    }
     func addCar(_ carType: Int) -> Bool {
         if carType == 1 {
             if big == 0 { return false }

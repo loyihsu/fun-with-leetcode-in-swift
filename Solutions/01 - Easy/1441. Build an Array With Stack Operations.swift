@@ -2,7 +2,7 @@
 
 class Solution {
     func buildArray(_ target: [Int], _ n: Int) -> [String] {
-        var tar = target , output = [String]()
+        var tar = target, output = [String]()
         for number in 1...n where tar.isEmpty == false {
             output.append("Push")
             if tar.first == number {

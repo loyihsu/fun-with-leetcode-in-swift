@@ -6,7 +6,7 @@ class Solution {
         let arr = arr.sorted()
         let diff = arr[1] - arr[0]
         for idx in 2..<arr.count where arr[idx] - arr[idx-1] != diff {
-            return false           
+            return false
         }
         return true
     }

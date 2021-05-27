@@ -12,14 +12,14 @@ class Solution {
     func maxSatisfaction(_ satisfaction: [Int]) -> Int {
         var global = 0, current = 0, sum = 0
         var sat = satisfaction.sorted().reversed()
-        
+
         for s in sat {
             sum += s
             current += sum
-            
-            global = max(global, current)   
+
+            global = max(global, current)
         }
-        
+
         return global
     }
 }

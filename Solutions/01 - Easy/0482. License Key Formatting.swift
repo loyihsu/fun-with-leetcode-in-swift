@@ -5,8 +5,8 @@ class Solution {
         var output = "", idx = S.index(before: S.endIndex), temp = ""
         while idx >= S.startIndex {
             if S[idx] != "-" {
-                temp.append(S[idx].uppercased())   
-            }            
+                temp.append(S[idx].uppercased())
+            }
             if temp.count == K {
                 output += !output.isEmpty ? "-" + temp : temp
                 temp = ""

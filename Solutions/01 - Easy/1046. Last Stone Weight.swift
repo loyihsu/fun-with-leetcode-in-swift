@@ -22,7 +22,7 @@ class Solution {
             }
             if temp1 != temp2 {
                 col.append(temp2-temp1)
-            }   
+            }
         }
         return col.isEmpty ? 0 : col[0]
     }

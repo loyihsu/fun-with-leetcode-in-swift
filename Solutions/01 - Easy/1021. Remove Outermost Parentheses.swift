@@ -30,8 +30,7 @@ class Solution {
             if char == "(" {
                 stack.append(char)
             } else if char == ")" {
-                if stack.isEmpty { return false }
-                else { stack.removeLast() }
+                if stack.isEmpty { return false } else { stack.removeLast() }
             }
         }
         return stack.isEmpty

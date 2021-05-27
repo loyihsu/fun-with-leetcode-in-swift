@@ -2,23 +2,23 @@
 // O5
 
 class Solution {
-    struct group {
+    struct Group {
         var members: [Int]
         var count: Int
         var limit: Int
     }
-    
+
     func groupThePeople(_ groupSizes: [Int]) -> [[Int]] {
         var i = 0
-        var groups = [group]()
+        var groups = [Group]()
         var found = false
-        
+
         var output = [[Int]]()
 
         var constructed = [Int]()
-        
-        var groupTemplate = group.init(members: [Int](), count: 0, limit: 0)
-        
+
+        var groupTemplate = Group(members: [Int](), count: 0, limit: 0)
+
         for g in groupSizes {
             if constructed.contains(g) == false {
                 groupTemplate.limit = g
@@ -26,7 +26,7 @@ class Solution {
                 constructed.append(g)
             }
         }
-        
+
         while i < groupSizes.count {
             for g in 0..<groups.count where groups[g].limit == groupSizes[i] && groups[g].count < groups[g].limit {
                 found = true
@@ -43,11 +43,11 @@ class Solution {
             }
             i += 1
         }
-        
+
         for g in 0..<groups.count where groups[g].count != 0 {
             output.append(groups[g].members)
         }
-        
+
         return output
     }
 }

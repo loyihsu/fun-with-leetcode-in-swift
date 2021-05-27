@@ -2,7 +2,7 @@
 
 class Solution {
     func mergeTrees(_ t1: TreeNode?, _ t2: TreeNode?) -> TreeNode? {
-        var value = 0, newTree: TreeNode?  
+        var value = 0, newTree: TreeNode?
         if let tree1 = t1, let tree2 = t2 {
             newTree = TreeNode.init(tree1.val + tree2.val)
             newTree!.left = mergeTrees(tree1.left, tree2.left)

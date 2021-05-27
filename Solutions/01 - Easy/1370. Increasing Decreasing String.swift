@@ -2,7 +2,7 @@
 
 class Solution {
     func sortString(_ s: String) -> String {
-        var dictionary = [Character : Int](), res = ""
+        var dictionary = [Character: Int](), res = ""
         s.forEach { dictionary[$0] = (dictionary[$0] ?? 0) + 1 }
         let sortedKeys = dictionary.map { $0.key }.sorted()
         guard sortedKeys.count > 1 else { return s }

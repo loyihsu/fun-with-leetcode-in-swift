@@ -1,7 +1,7 @@
 // Problem: https://leetcode.com/problems/guess-number-higher-or-lower/
 
-class Solution : GuessGame {
-    func guessNumber(_ n: Int) -> Int {    
+class Solution: GuessGame {
+    func guessNumber(_ n: Int) -> Int {
         var lower = 1, higher = n
         while true {
             var mid = (lower + higher)/2

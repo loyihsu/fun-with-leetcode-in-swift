@@ -2,12 +2,11 @@
 
 class Solution {
     func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
-        if lists.isEmpty { return nil }
-        else if lists.count == 1 { return lists[0] }
-        
+        if lists.isEmpty { return nil } else if lists.count == 1 { return lists[0] }
+
         var merged = [Int]()
         var output: ListNode?
-        
+
         for list in lists {
             var head = list
             while let temp = head {
@@ -15,7 +14,7 @@ class Solution {
                 head = temp.next
             }
         }
-        
+
         merged.sort()
 
         // Create output list from array
@@ -28,7 +27,7 @@ class Solution {
                 output = newNode
             }
         }
-        
+
         return output
     }
 }

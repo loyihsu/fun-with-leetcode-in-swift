@@ -7,7 +7,7 @@ class Solution {
         var prev = first, start = first, output = [String]()
         for idx in 1..<nums.count {
             if nums[idx] != prev + 1 {
-                output.append(start != prev ? "\(start)->\(prev)" : "\(start)")                    
+                output.append(start != prev ? "\(start)->\(prev)" : "\(start)")
                 start = nums[idx]
             }
             prev = nums[idx]

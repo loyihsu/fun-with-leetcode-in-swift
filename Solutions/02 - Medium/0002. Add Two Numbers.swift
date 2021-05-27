@@ -8,7 +8,7 @@ class Solution {
         }
         start.next = node
     }
-    
+
     func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         var temp1: ListNode? = l1
         var temp2: ListNode? = l2
@@ -24,7 +24,7 @@ class Solution {
 
             carry = newValue >= 10 ? 1 : 0
             newValue = carry != 0 ? newValue - 10 : newValue
-            
+
             let newNode = ListNode.init(newValue)
             if answer == nil {
                 answer = newNode

@@ -2,7 +2,7 @@
 
 class Solution {
     func checkIfExist(_ arr: [Int]) -> Bool {
-        var map = [Int:Int]()
+        var map = [Int: Int]()
         arr.forEach { map[$0] = (map[$0] ?? 0) + 1 }
         for value in arr {
             if let val = map[value], let double = map[2*value] {

@@ -11,7 +11,6 @@ class Solution {
             }
             processedStrings.0 += table[char, default: " "]
         }
-        
         nextChar = 1
         table = [Character: String]()
         for char in t {

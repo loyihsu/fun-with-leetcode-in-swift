@@ -9,8 +9,8 @@ class Solution {
         }
         return count
     }
-    func generateBitMap(_ arr: [Int]) -> [Int : [Int]] {
-        var output = [Int : [Int]]()
+    func generateBitMap(_ arr: [Int]) -> [Int: [Int]] {
+        var output = [Int: [Int]]()
         arr.forEach { output[countOnes($0), default: []].append($0) }
         return output
     }

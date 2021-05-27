@@ -2,14 +2,15 @@
 
 class Solution {
     func tictactoe(_ moves: [[Int]]) -> String {
-        var board = [[Character]](repeating: [Character](repeating: " ", count: 3), count: 3), switcher = true, winner = ""
+        var board = [[Character]](repeating: [Character](repeating: " ", count: 3), count: 3)
+        var switcher = true, winner = ""
         for move in moves {
             board[move[0]][move[1]] = switcher ? "X" : "O"
             winner = winnerDecision(board, winner)
             if winner != "Pending" {
                 return winner
             }
-            switcher = !switcher    
+            switcher = !switcher
         }
         return winner
     }
@@ -20,7 +21,7 @@ class Solution {
             }
             if board[0][idx] != " " && board[0][idx] == board[1][idx] && board[1][idx] == board[2][idx] {
                 return board[0][idx] == "X" ? "A" : "B"
-            } 
+            }
         }
         if board[0][0] != " " && board[0][0] == board[1][1] && board[1][1] == board[2][2] {
             return board[0][0] == "X" ? "A" : "B"
@@ -29,10 +30,8 @@ class Solution {
         }
         var flag = false
         for idx in board.indices {
-            for jdx in board[idx].indices {
-                if board[idx][jdx] == " " {
-                    return "Pending"
-                }
+            for jdx in board[idx].indices where board[idx][jdx] == " " {
+                return "Pending"
             }
         }
         return "Draw"

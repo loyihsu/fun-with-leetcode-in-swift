@@ -7,6 +7,6 @@ class Solution {
     }
     func isEqual(_ s: TreeNode?, _ t: TreeNode?) -> Bool {
         guard let left = s, let right = t else { return s == nil && t == nil }
-        return left.val == right.val && isEqual(left.left, right.left) && isEqual(left.right, right.right) 
+        return left.val == right.val && isEqual(left.left, right.left) && isEqual(left.right, right.right)
     }
 }

@@ -14,7 +14,7 @@ class Solution {
             }
             odx = s1.index(after: odx)
             tdx = s2.index(after: tdx)
-        } 
+        }
         return temp.0.count == 2 && temp.0 == temp.1.reversed()
     }
 }

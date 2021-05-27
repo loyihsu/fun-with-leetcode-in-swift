@@ -8,7 +8,7 @@ class Solution {
             word = word.components(separatedBy: .punctuationCharacters).first!
             map[word, default: 0] += 1
         }
-        
+
         for (key, value) in map.sorted { $0.value > $1.value } where !banned.contains(key) {
             return key
         }

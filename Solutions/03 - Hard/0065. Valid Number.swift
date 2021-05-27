@@ -12,7 +12,7 @@ class Solution {
         return String(s[before...after])
     }
     func checkAllCharactersAre(in set: String, for str: String) -> Bool {
-        var dic = [Character : Bool]()
+        var dic = [Character: Bool]()
         set.forEach { dic[$0] = true }
         for s in str where dic[s] == nil {
             return false
@@ -30,8 +30,7 @@ class Solution {
                 if index == str.count - 1 { last = true }
             }
         }
-        if last { output.append(temp) }
-        else if temp.isEmpty == false { output.append(temp) }
+        if last { output.append(temp) } else if temp.isEmpty == false { output.append(temp) }
         return output
     }
     func checkValidNumber(_ str: String, _ pointCheck: Bool, _ signCheck: Bool) -> Bool {
@@ -47,8 +46,7 @@ class Solution {
                 if s != "." && s != "+" && s != "-" { swit == false ? before.append(s) : after.append(s) }
                 swit = s == "." ? true : swit
             }
-            if before.isEmpty && after.isEmpty { return false }
-            else { return !before.isEmpty || !after.isEmpty }
+            if before.isEmpty && after.isEmpty { return false } else { return !before.isEmpty || !after.isEmpty }
         }
         return true
     }

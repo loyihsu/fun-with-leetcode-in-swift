@@ -13,8 +13,7 @@ class Solution {
                 tempCount += 1
             }
         }
-        if index == 0 { return temp }
-        else if tempCount == 0 { return output }
+        if index == 0 { return temp } else if tempCount == 0 { return output }
         for i in 0..<tempCount {
             output[index] = temp[i]
             index += 1

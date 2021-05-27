@@ -9,7 +9,7 @@ class NumArray {
             temp += nums[idx]
             sums[idx] = temp
         }
-    }   
+    }
     func sumRange(_ i: Int, _ j: Int) -> Int {
         sums[j] - (i != 0 ? sums[i-1] : 0)
     }

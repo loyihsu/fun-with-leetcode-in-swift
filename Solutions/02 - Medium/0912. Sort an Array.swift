@@ -22,11 +22,11 @@ class Solution {
                 arr[start] = temp
             }
         }
-        
+
         arr[left] = arr[start]
         arr[start] = standard
-        
+
         qsort(&arr, left, start-1)
-        qsort(&arr, start+1,right)
+        qsort(&arr, start+1, right)
     }
 }
