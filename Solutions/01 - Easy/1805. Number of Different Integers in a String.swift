@@ -2,7 +2,7 @@
 
 class Solution {
     func insert(item: inout String, to set: inout Set<String>) {
-        guard !item.isEmpty else { return } 
+        guard !item.isEmpty else { return }
         while item.first == "0" && item.count > 1 {
             item.removeFirst()
         }

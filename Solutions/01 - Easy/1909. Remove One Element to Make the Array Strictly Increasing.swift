@@ -3,7 +3,7 @@
 class Solution {
     func canBeIncreasing(_ nums: [Int]) -> Bool {
         var tracker = [Bool](repeating: false, count: nums.count)
-        for idx in nums.indices { 
+        for idx in nums.indices {
             var flag = true
             var temp = nums
             temp.remove(at: idx)

@@ -13,7 +13,7 @@ class Solution {
             max.0 = num > max.0 ? num : max.0
         }
         for num in temp where num != max.0 {
-            max.1 = num > max.1 ? num : max.1 
+            max.1 = num > max.1 ? num : max.1
         }
         return max.1
     }

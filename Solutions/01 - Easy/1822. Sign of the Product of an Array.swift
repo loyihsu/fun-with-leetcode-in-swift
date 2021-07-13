@@ -2,7 +2,7 @@
 
 class Solution {
     func arraySign(_ nums: [Int]) -> Int {
-        var negCount = 0       
+        var negCount = 0
         for num in nums {
             if num == 0 {
                 return 0

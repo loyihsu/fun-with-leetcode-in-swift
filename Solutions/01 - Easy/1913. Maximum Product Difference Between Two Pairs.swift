@@ -7,17 +7,17 @@ class Solution {
         for round in 0...1 {
             var positionBuffer = -1
             for (idx, num) in nums.enumerated() where !pickedPosition.contains(idx) && num > fourNumbers[round] {
-                (positionBuffer, fourNumbers[round]) = (idx, num)   
+                (positionBuffer, fourNumbers[round]) = (idx, num)
             }
-            pickedPosition.insert(positionBuffer)   
+            pickedPosition.insert(positionBuffer)
         }
         // Small side
         for round in 2...3 {
             var positionBuffer = -1
             for (idx, num) in nums.enumerated() where !pickedPosition.contains(idx) && num < fourNumbers[round] {
-                (positionBuffer, fourNumbers[round]) = (idx, num)   
+                (positionBuffer, fourNumbers[round]) = (idx, num)
             }
-            pickedPosition.insert(positionBuffer)    
+            pickedPosition.insert(positionBuffer)
         }
         return fourNumbers[0] * fourNumbers[1] - fourNumbers[2] * fourNumbers[3]
     }
