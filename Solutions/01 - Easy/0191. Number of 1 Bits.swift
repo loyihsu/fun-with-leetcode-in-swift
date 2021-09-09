@@ -9,4 +9,13 @@ class Solution {
         }
         return count
     }
+    func anotherHammingWeight(_ n: Int) -> Int {
+        var count = 0, n = n
+        while n != 0 {
+            count += n % 2
+            n /= 2
+        }
+        return count
+    }
+    }
 }
