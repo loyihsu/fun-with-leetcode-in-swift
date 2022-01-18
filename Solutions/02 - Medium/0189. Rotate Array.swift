@@ -2,11 +2,7 @@
 
 class Solution {
     func rotate(_ nums: inout [Int], _ k: Int) {
-        var i = k
-        while i > 0 {
-            let temp = nums.popLast()!
-            nums.insert(temp, at: 0)
-            i -= 1
-        }
+        let splitter = nums.count - (k % nums.count)
+        nums = Array(nums[splitter...] + nums[0..<splitter])
     }
 }
