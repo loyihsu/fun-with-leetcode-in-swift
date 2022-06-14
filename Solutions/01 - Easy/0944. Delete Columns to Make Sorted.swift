@@ -12,6 +12,7 @@ class Solution {
         }
         return true
     }
+
     func minDeletionSize(_ strs: [String]) -> Int {
         var str = "", strs = strs, count = 0
         while strs.first?.isEmpty == false {

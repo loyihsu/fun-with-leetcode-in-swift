@@ -9,6 +9,7 @@ class Solution {
         }
         return output
     }
+
     func firstUniqChar(_ s: String) -> Int {
         let map = generateLowercasedMap()
         var counter = [Int](repeating: 0, count: 26)

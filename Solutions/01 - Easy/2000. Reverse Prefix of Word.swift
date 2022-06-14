@@ -6,8 +6,8 @@ class Solution {
         guard let idx = word.firstIndex(of: ch) else {
             return String(word)
         }
-        let reversed = Array(word[word.startIndex...idx].reversed())
-        for pos in word.startIndex...idx {
+        let reversed = Array(word[word.startIndex ... idx].reversed())
+        for pos in word.startIndex ... idx {
             word[pos] = reversed[pos]
         }
         return String(word)

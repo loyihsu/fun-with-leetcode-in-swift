@@ -6,12 +6,15 @@ class Solution {
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter.date(from: date)!
     }
+
     func convertToDays(value: Double) -> Int {
-        return Int(value) > 0 ? Int(value)/86400 : -Int(value)/86400
+        return Int(value) > 0 ? Int(value) / 86400 : -Int(value) / 86400
     }
+
     func days(_ date1: String, _ date2: String) -> Int {
         return convertToDays(value: dateConverter(date1).timeIntervalSince(dateConverter(date2)))
     }
+
     func daysBetweenDates(_ date1: String, _ date2: String) -> Int {
         return days(date1, date2)
     }

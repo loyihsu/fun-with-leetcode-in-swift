@@ -3,11 +3,12 @@
 class Solution {
     private func powerHelper(base: Int, pow: Int) -> Int {
         var answer = 1
-        for _ in 0..<pow {
+        for _ in 0 ..< pow {
             answer = answer % 1337 * base % 1337
         }
         return answer % 1337
     }
+
     func superPow(_ a: Int, _ b: [Int]) -> Int {
         guard a != 1 else { return 1 }
         var base = a % 1337, answer = 1, idx = b.count - 1

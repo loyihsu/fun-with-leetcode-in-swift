@@ -18,12 +18,14 @@ class Solution {
         }
         return subs
     }
+
     func outerRemover(_ s: String) -> String {
         var output = s
         output.removeFirst()
         output.removeLast()
         return output
     }
+
     func validate(_ str: String) -> Bool {
         var stack = ""
         for char in str {
@@ -35,6 +37,7 @@ class Solution {
         }
         return stack.isEmpty
     }
+
     func removeOuterParentheses(_ S: String) -> String {
         var subs = chunk(S), temp = ""
         for (index, sub) in subs.enumerated() {

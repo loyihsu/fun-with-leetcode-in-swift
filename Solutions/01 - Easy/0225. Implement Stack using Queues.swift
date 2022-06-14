@@ -6,6 +6,7 @@ class MyStack {
     func push(_ element: Int) {
         queue.append(element)
     }
+
     /** Removes the element on top of the stack and returns that element. */
     func pop() -> Int {
         var temp = [Int](), output = 0
@@ -23,6 +24,7 @@ class MyStack {
         }
         return output
     }
+
     /** Get the top element. */
     func top() -> Int {
         var temp = [Int](), output = 0
@@ -39,6 +41,7 @@ class MyStack {
         }
         return output
     }
+
     /** Returns whether the stack is empty. */
     func empty() -> Bool {
         queue.isEmpty

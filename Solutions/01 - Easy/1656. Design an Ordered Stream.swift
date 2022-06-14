@@ -9,7 +9,7 @@ class OrderedStream {
     }
 
     func insert(_ id: Int, _ value: String) -> [String] {
-        list[id-1] = value
+        list[id - 1] = value
         var output = [String]()
         while ptr < list.count, let item = list[ptr] {
             output.append(item)

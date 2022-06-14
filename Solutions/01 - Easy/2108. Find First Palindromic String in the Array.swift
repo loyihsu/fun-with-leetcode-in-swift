@@ -11,6 +11,7 @@ class Solution {
         }
         return true
     }
+
     func firstPalindrome(_ words: [String]) -> String {
         for word in words where isPalindrome(word) {
             return word

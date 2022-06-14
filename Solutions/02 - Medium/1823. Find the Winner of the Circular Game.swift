@@ -9,6 +9,7 @@ class Solution {
             self.next = next
         }
     }
+
     class List {
         var first: ListNode?
         func insert(_ val: Int) {
@@ -25,6 +26,7 @@ class Solution {
                 first?.next = first
             }
         }
+
         func remove(_ val: Int) -> Bool {
             guard first !== first?.next else { return false }
             var current = first
@@ -34,19 +36,21 @@ class Solution {
             current?.next = current?.next?.next
             return true
         }
+
         func next() -> Int {
             var temp = first
             first = first?.next
             return temp?.value ?? 0
         }
     }
+
     func findTheWinner(_ n: Int, _ k: Int) -> Int {
         var list = List(), temp = -1
-        for idx in 1...n {
+        for idx in 1 ... n {
             list.insert(idx)
         }
         while true {
-            for _ in 0..<k {
+            for _ in 0 ..< k {
                 temp = list.next()
             }
             if list.remove(temp) == false {

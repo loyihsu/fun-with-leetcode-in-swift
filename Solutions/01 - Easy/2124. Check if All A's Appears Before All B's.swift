@@ -4,9 +4,9 @@ class Solution {
     func checkString(_ s: String) -> Bool {
         var firstB = false
         for char in s {
-            if firstB && char == "a" {
+            if firstB, char == "a" {
                 return false
-            } else if !firstB && char == "b" {
+            } else if !firstB, char == "b" {
                 firstB = true
             }
         }

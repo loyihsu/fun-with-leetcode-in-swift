@@ -5,7 +5,7 @@ class Solution {
         var temp = [Int](repeating: 0, count: 10001), output = piles, pos = 0
         piles.forEach { temp[$0] += 1 }
         for (index, value) in temp.enumerated() where value > 0 {
-            for _ in 0..<value {
+            for _ in 0 ..< value {
                 output[pos] = index
                 pos += 1
             }

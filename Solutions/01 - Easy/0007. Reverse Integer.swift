@@ -8,6 +8,6 @@ class Solution {
             num /= 10
         }
         res = x > 0 ? res : -res
-        return res > 2147483647 || res < -2147483648 ? 0 : res
+        return res > 2_147_483_647 || res < -2_147_483_648 ? 0 : res
     }
 }

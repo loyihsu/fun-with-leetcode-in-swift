@@ -28,7 +28,7 @@ class Solution {
         }
 
         while i < groupSizes.count {
-            for g in 0..<groups.count where groups[g].limit == groupSizes[i] && groups[g].count < groups[g].limit {
+            for g in 0 ..< groups.count where groups[g].limit == groupSizes[i] && groups[g].count < groups[g].limit {
                 found = true
                 groups[g].members.append(i)
                 groups[g].count += 1
@@ -44,7 +44,7 @@ class Solution {
             i += 1
         }
 
-        for g in 0..<groups.count where groups[g].count != 0 {
+        for g in 0 ..< groups.count where groups[g].count != 0 {
             output.append(groups[g].members)
         }
 

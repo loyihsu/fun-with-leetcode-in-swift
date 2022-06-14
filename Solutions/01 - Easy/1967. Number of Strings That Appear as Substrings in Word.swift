@@ -8,8 +8,8 @@ class Solution {
                 continue
             }
             var idx = word.startIndex
-            while idx < word.index(word.endIndex, offsetBy: -pattern.count+1) {
-                if pattern == word[idx..<word.index(idx, offsetBy: pattern.count)] {
+            while idx < word.index(word.endIndex, offsetBy: -pattern.count + 1) {
+                if pattern == word[idx ..< word.index(idx, offsetBy: pattern.count)] {
                     count += 1
                     break
                 }

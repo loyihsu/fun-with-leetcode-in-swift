@@ -9,7 +9,7 @@ class Solution {
             let temp = "\(pos.firstIndex(of: char)!)"
             cur.append(temp)
         }
-        for _ in 0..<k {
+        for _ in 0 ..< k {
             count = 0
             for digit in cur {
                 count += digits.firstIndex(of: digit)!

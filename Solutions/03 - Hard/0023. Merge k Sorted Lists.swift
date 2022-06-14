@@ -20,9 +20,9 @@ class Solution {
         // Create output list from array
         while let last = merged.popLast() {
             if output == nil {
-                output = ListNode.init(last)
+                output = ListNode(last)
             } else {
-                var newNode = ListNode.init(last)
+                var newNode = ListNode(last)
                 newNode.next = output
                 output = newNode
             }

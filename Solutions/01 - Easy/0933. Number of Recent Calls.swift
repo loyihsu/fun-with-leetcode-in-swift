@@ -5,7 +5,7 @@ class RecentCounter {
     func ping(_ t: Int) -> Int {
         pings.append(t)
         var pos = 0
-        for idx in pings.indices where pings[idx] >= t-3000 {
+        for idx in pings.indices where pings[idx] >= t - 3000 {
             pos = idx
             break
         }

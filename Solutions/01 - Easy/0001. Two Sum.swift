@@ -8,8 +8,8 @@ class Solution {
 
         for index in nums.indices {
             if let value = hashmap[target - nums[index]], value != index {
-                    output = [index, value]
-                    break
+                output = [index, value]
+                break
             }
         }
 

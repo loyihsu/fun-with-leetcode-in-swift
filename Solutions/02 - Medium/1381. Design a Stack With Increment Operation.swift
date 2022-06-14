@@ -22,7 +22,7 @@ class CustomStack {
 
     func increment(_ k: Int, _ val: Int) {
         var limit = k < pos ? k : pos
-        for index in 0..<limit {
+        for index in 0 ..< limit {
             list[index] += val
         }
     }

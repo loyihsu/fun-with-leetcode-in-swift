@@ -7,8 +7,8 @@ class Solution {
         var temp = 0
         repeat {
             temp = root
-            root = (temp + num/temp)/2
-        } while (temp - root > 1)
+            root = (temp + num / temp) / 2
+        } while temp - root > 1
         return num == root * root
     }
 }

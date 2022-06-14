@@ -7,7 +7,7 @@ class Solution {
             userLogs[log[0], default: []].insert(log[1])
         }
         for value in userLogs.values {
-            output[value.count-1] += 1
+            output[value.count - 1] += 1
         }
         return output
     }

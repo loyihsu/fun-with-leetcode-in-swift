@@ -1,7 +1,7 @@
 // Problem: https://leetcode.com/problems/lucky-numbers-in-a-matrix/
 
 class Solution {
-    func luckyNumbers (_ matrix: [[Int]]) -> [Int] {
+    func luckyNumbers(_ matrix: [[Int]]) -> [Int] {
         var rowMin = [Int](), columnMax = [Int]()
 
         for i in matrix.indices {

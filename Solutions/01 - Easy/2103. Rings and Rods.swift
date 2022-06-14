@@ -14,6 +14,6 @@ class Solution {
             }
             idx = rings.index(idx, offsetBy: 2)
         }
-        return list.filter({ $0.count == 3 }).count
+        return list.filter { $0.count == 3 }.count
     }
 }

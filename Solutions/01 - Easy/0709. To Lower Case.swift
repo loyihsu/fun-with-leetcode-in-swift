@@ -10,7 +10,7 @@ class Solution {
         let shift = smallAVal - bigAVal
         for s in str.unicodeScalars {
             var value = s.value
-            if value >= bigAVal && value <= bigZVal {
+            if value >= bigAVal, value <= bigZVal {
                 value += shift
             }
             output.append(Character(UnicodeScalar(value)!))

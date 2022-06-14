@@ -5,7 +5,7 @@ class Solution {
         guard n > 2 else { return false }
         let root = Int(sqrt(Double(n)))
         var count = 0
-        for num in 1...root {
+        for num in 1 ... root {
             if n % num == 0 {
                 count += 1
                 if n / num != num {

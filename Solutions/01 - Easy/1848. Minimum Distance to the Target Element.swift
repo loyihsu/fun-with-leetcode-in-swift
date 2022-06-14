@@ -5,7 +5,7 @@ class Solution {
         guard nums[start] != target else { return 0 }
         var output = Int.max
         for idx in nums.indices where nums[idx] == target {
-            let val = abs(start-idx)
+            let val = abs(start - idx)
             output = output > val ? val : output
         }
         return output

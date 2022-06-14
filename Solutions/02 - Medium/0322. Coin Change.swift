@@ -10,8 +10,8 @@ class Solution {
         chart[0] = 0
 
         for coin in coins where coin <= amount {
-            for current in coin..<max {
-                chart[current] = min(chart[current], 1 + chart[current-coin])
+            for current in coin ..< max {
+                chart[current] = min(chart[current], 1 + chart[current - coin])
             }
         }
 

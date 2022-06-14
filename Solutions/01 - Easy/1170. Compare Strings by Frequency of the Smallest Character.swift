@@ -16,10 +16,11 @@ class Solution {
         map[str] = output
         return output
     }
+
     func numSmallerByFrequency(_ queries: [String], _ words: [String]) -> [Int] {
         let counts: [Int] = words.map { smallestCharacterCount(in: $0) }
         var output = [Int](repeating: 0, count: queries.count)
-        for idx in 0..<output.count {
+        for idx in 0 ..< output.count {
             output[idx] = counts.filter { smallestCharacterCount(in: queries[idx]) < $0 }.count
         }
         return output

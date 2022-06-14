@@ -6,7 +6,7 @@ class Solution {
         let vowels = Set("aeiou")
         for idx in word.indices {
             for jdx in word.indices where idx < jdx && word.distance(from: idx, to: jdx) >= 4 {
-                let string = String(word[idx...jdx])
+                let string = String(word[idx ... jdx])
                 if string.filter({ !vowels.contains($0) }).count != 0 {
                     continue
                 }

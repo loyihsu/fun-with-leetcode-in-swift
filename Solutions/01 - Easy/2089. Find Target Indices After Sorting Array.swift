@@ -7,6 +7,6 @@ class Solution {
             count.less += (num < target ? 1 : 0)
             count.equal += (num == target ? 1 : 0)
         }
-        return Array(count.less..<count.less+count.equal)
+        return Array(count.less ..< count.less + count.equal)
     }
 }

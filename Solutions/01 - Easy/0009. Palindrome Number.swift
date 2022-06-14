@@ -8,7 +8,7 @@ class Solution {
             arr.append(num % 10)
             num /= 10
         }
-        for index in arr.indices where arr[index] != arr[arr.count-index-1] {
+        for index in arr.indices where arr[index] != arr[arr.count - index - 1] {
             return false
         }
         return true

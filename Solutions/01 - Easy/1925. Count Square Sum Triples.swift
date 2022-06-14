@@ -6,11 +6,12 @@ class Solution {
     func isInteger(_ double: Double) -> Bool {
         return Double(Int(double)) == double
     }
+
     func countTriples(_ n: Int) -> Int {
         var count = 0
-        for idx in 1...n {
-            for jdx in idx...n {
-                let double: Double = sqrt(Double(idx*idx + jdx*jdx))
+        for idx in 1 ... n {
+            for jdx in idx ... n {
+                let double: Double = sqrt(Double(idx * idx + jdx * jdx))
                 if Int(double) > n {
                     break
                 }

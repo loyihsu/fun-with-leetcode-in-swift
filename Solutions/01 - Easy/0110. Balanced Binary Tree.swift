@@ -8,14 +8,15 @@ class Solution {
                 max = current.depth
             }
             if let left = current.node.left {
-                stack.append((left, current.depth+1))
+                stack.append((left, current.depth + 1))
             }
             if let right = current.node.right {
-                stack.append((right, current.depth+1))
+                stack.append((right, current.depth + 1))
             }
         }
         return max
     }
+
     func isBalanced(_ root: TreeNode?) -> Bool {
         guard let root = root else { return true }
         var depths: (left: Int, right: Int) = (0, 0)
@@ -25,7 +26,7 @@ class Solution {
         if let right = root.right {
             depths.right = self.depths(right)
         }
-        guard depths.left - depths.right <= 1 && depths.left - depths.right >= -1 else { return false }
+        guard depths.left - depths.right <= 1, depths.left - depths.right >= -1 else { return false }
         var balances: (left: Bool, right: Bool) = (true, true)
         if let left = root.left {
             balances.left = isBalanced(left)

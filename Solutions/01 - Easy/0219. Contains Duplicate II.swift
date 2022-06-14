@@ -7,11 +7,12 @@ class Solution {
         if midvalue == val {
             return true
         } else if mid > val {
-            return find(val, in: array, left: left, right: mid-1)
+            return find(val, in: array, left: left, right: mid - 1)
         } else {
-            return find(val, in: array, left: mid+1, right: right)
+            return find(val, in: array, left: mid + 1, right: right)
         }
     }
+
     func containsNearbyDuplicate(_ nums: [Int], _ k: Int) -> Bool {
         guard k > 0 else { return false }
         var map = [Int: [Int]]()
@@ -20,8 +21,8 @@ class Solution {
         }
         for (_, values) in map where values.count > 1 {
             for value in values {
-                for count in 1...k {
-                    if find(value + count, in: values, left: 0, right: values.count-1) {
+                for count in 1 ... k {
+                    if find(value + count, in: values, left: 0, right: values.count - 1) {
                         return true
                     }
                 }

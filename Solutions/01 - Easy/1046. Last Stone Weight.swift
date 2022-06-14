@@ -10,6 +10,7 @@ class Solution {
         array.remove(at: curmax.0)
         return curmax.1
     }
+
     func lastStoneWeight(_ stones: [Int]) -> Int {
         var col = stones, temp1 = -1, temp2 = -1, swap = -1
         while col.count > 1 {
@@ -21,7 +22,7 @@ class Solution {
                 temp1 = swap
             }
             if temp1 != temp2 {
-                col.append(temp2-temp1)
+                col.append(temp2 - temp1)
             }
         }
         return col.isEmpty ? 0 : col[0]

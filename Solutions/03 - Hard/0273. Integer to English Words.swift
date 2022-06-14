@@ -18,6 +18,7 @@ class Solution {
         }
         return result
     }
+
     func numberToWords(_ num: Int) -> String {
         guard num != 0 else { return "Zero" }
         let chunks = chunking(num)
@@ -29,7 +30,7 @@ class Solution {
             if chunk != 0 {
                 if generated == "" {
                     if chunk >= 100 {
-                        let first = chunk/100
+                        let first = chunk / 100
                         generated += "\(converter[first]!) Hundred"
                         chunk = chunk % 100
                     }

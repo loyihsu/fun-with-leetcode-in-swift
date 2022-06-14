@@ -2,7 +2,7 @@
 
 class Solution {
     func rotateRight(_ head: ListNode?, _ k: Int) -> ListNode? {
-        guard head != nil && k > 0 else { return head }
+        guard head != nil, k > 0 else { return head }
         var list = [Int](), temp = head, last = head, counter = 0
         while let current = temp {
             list.append(current.val)

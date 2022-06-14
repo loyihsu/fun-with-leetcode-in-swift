@@ -2,6 +2,6 @@
 
 class Solution {
     func getConcatenation(_ nums: [Int]) -> [Int] {
-        [nums, nums].flatMap({$0})
+        [nums, nums].flatMap { $0 }
     }
 }

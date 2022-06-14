@@ -2,7 +2,7 @@
 
 class Solution {
     func detectCapitalUse(_ word: String) -> Bool {
-        let exceptFirst = word[word.index(after: word.startIndex)..<word.endIndex]
+        let exceptFirst = word[word.index(after: word.startIndex) ..< word.endIndex]
         let uppercased = word == word.uppercased()
         let lowercased = word == word.lowercased()
         let first = "\(word.first!)" == "\(word.first!)".uppercased()

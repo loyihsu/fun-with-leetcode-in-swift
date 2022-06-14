@@ -3,7 +3,7 @@
 class Solution {
     func countAndSay(_ n: Int) -> String {
         var str = "1", count = 0, temp: Character = "T", strTemp = ""
-        for _ in 0..<n-1 {
+        for _ in 0 ..< n - 1 {
             strTemp = ""
             temp = "T"
             count = 0

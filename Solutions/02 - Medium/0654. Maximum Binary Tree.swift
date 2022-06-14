@@ -2,7 +2,7 @@
 
 class Solution {
     func findMaxNumber(in nums: [Int]) -> (Int, Int) {
-        var output = (-1, -1)// Output format: (index, value)
+        var output = (-1, -1) // Output format: (index, value)
         for (index, value) in nums.enumerated() where output.1 < value {
             output = (index, value)
         }
@@ -10,19 +10,19 @@ class Solution {
     }
 
     func subarrayMaker(_ nums: [Int], _ div: Int) -> ([Int]?, [Int]?) {
-        var left: [Int]? = nil, right: [Int]? = nil
+        var left: [Int]?, right: [Int]?
 
         if div > 0 {
             var array = [Int](repeating: 0, count: div)
-            for i in 0..<div {
+            for i in 0 ..< div {
                 array[i] = nums[i]
             }
             left = array
         }
 
         if div < nums.count {
-            var array = [Int](repeating: 0, count: nums.count-div-1)
-            for i in div+1..<nums.count {
+            var array = [Int](repeating: 0, count: nums.count - div - 1)
+            for i in div + 1 ..< nums.count {
                 array[i - div - 1] = nums[i]
             }
             right = array
@@ -33,10 +33,10 @@ class Solution {
 
     func constructMaximumBinaryTree(_ nums: [Int]) -> TreeNode? {
         guard nums.count > 0 else { return nil }
-        guard nums.count > 1 else { return TreeNode.init(nums[0]) }
+        guard nums.count > 1 else { return TreeNode(nums[0]) }
 
         let maxNumber = findMaxNumber(in: nums)
-        let output = TreeNode.init(maxNumber.1)
+        let output = TreeNode(maxNumber.1)
         let subarrays = subarrayMaker(nums, maxNumber.0)
 
         if subarrays.0 != nil {

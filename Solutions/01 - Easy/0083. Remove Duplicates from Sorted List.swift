@@ -2,13 +2,14 @@
 
 class Solution {
     func createList(_ arr: [Int]) -> ListNode? {
-        var list: ListNode? = nil, index = arr.count-1
+        var list: ListNode?, index = arr.count - 1
         while index >= 0 {
-            list = ListNode.init(arr[index], list)
+            list = ListNode(arr[index], list)
             index -= 1
         }
         return list
     }
+
     func deleteDuplicates(_ head: ListNode?) -> ListNode? {
         var last = Int.max, h = head, res = [Int]()
         while let temp = h {

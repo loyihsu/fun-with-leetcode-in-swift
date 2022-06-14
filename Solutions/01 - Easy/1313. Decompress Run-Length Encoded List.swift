@@ -7,7 +7,7 @@ class Solution {
             if n % 2 == 0 {
                 count = nums[n]
             } else if n % 2 == 1 {
-                for _ in 0..<count {
+                for _ in 0 ..< count {
                     output.append(nums[n])
                 }
             }

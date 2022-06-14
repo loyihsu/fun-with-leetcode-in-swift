@@ -5,10 +5,10 @@ class Solution {
         guard let root = root else { return false }
         var stack: [(node: TreeNode, left: Int)] = [(root, targetSum)]
         while let cur = stack.popLast() {
-            if cur.node.left == nil && cur.node.right == nil && cur.left == cur.node.val {
+            if cur.node.left == nil, cur.node.right == nil, cur.left == cur.node.val {
                 return true
             }
-            for child in [cur.node.left, cur.node.right].compactMap({$0}) {
+            for child in [cur.node.left, cur.node.right].compactMap({ $0 }) {
                 stack.append((child, cur.left - cur.node.val))
             }
         }

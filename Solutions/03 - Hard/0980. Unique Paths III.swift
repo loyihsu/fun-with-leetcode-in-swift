@@ -11,12 +11,13 @@ class Solution {
         var temp = grid
         temp[pos.x][pos.y] = -1
         let dir = [(1, 0), (0, 1), (-1, 0), (0, -1)]
-        for (dx, dy) in dir where pos.x+dx >= 0 && pos.x+dx < grid.count && pos.y+dy >= 0 && pos.y+dy < grid[0].count {
-            if validSet.contains(grid[pos.x+dx][pos.y+dy]) {
-                traverse(temp, (pos.x+dx, pos.y+dy), sum-1)
+        for (dx, dy) in dir where pos.x + dx >= 0 && pos.x + dx < grid.count && pos.y + dy >= 0 && pos.y + dy < grid[0].count {
+            if validSet.contains(grid[pos.x + dx][pos.y + dy]) {
+                traverse(temp, (pos.x + dx, pos.y + dy), sum - 1)
             }
         }
     }
+
     func uniquePathsIII(_ grid: [[Int]]) -> Int {
         var start = (-1, -1), walkable = 0
         for idx in grid.indices {

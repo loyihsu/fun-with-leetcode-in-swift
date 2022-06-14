@@ -2,6 +2,6 @@
 
 class Solution {
     func checkOnesSegment(_ s: String) -> Bool {
-        s.components(separatedBy: "0").filter({!$0.isEmpty}).count <= 1
+        s.components(separatedBy: "0").filter { !$0.isEmpty }.count <= 1
     }
 }

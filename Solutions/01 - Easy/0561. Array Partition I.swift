@@ -3,9 +3,9 @@
 class Solution {
     func arrayPairSum(_ nums: [Int]) -> Int {
         var interval = false
-        return nums.sorted().reduce(0, {
+        return nums.sorted().reduce(0) {
             interval = !interval
-            return $0+(interval ? $1 : 0)
-        })
+            return $0 + (interval ? $1 : 0)
+        }
     }
 }

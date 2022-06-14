@@ -5,7 +5,7 @@ class MinStack {
     var array = [Int]()
 
     /** initialize your data structure here. */
-    init() { }
+    init() {}
 
     func push(_ x: Int) {
         array.append(x)

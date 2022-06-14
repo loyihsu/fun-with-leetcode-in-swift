@@ -10,6 +10,7 @@ class Solution {
         }
         return output.reversed()
     }
+
     func normalise(_ num: [Int]) -> [Int] {
         var carry = 0, output = num, index = output.count - 1
         while index >= 0 {
@@ -29,11 +30,12 @@ class Solution {
         }
         return output
     }
+
     func addToArrayForm(_ A: [Int], _ K: Int) -> [Int] {
         guard A != [0] else { return makeArray(K) }
         let k = makeArray(K)
         var posA = A.count - 1, posK = k.count - 1, output = A
-        while posA >= 0 && posK >= 0 {
+        while posA >= 0, posK >= 0 {
             output[posA] += k[posK]
             posA -= 1
             posK -= 1

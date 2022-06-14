@@ -14,6 +14,7 @@ class Solution {
         output.append(temp)
         return output
     }
+
     func uncommonFromSentences(_ A: String, _ B: String) -> [String] {
         let full = parser(A + " " + B)
         var map = [String: Int]()

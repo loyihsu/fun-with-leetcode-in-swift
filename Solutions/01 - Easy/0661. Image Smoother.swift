@@ -10,8 +10,8 @@ class Solution {
                 let hstarter = jndex - 1 >= 0 ? jndex - 1 : 0
                 let hender = jndex + 1 < M[0].count ? jndex + 1 : M[0].count - 1
                 var sum = 0, count = 0
-                for kndex in vstarter...vender {
-                    for lndex in hstarter...hender {
+                for kndex in vstarter ... vender {
+                    for lndex in hstarter ... hender {
                         sum += M[kndex][lndex]
                         count += 1
                     }

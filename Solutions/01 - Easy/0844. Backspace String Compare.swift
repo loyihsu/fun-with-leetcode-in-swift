@@ -12,6 +12,7 @@ class Solution {
         }
         return output
     }
+
     func backspaceCompare(_ S: String, _ T: String) -> Bool {
         return generateString(S) == generateString(T)
     }

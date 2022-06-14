@@ -17,7 +17,7 @@ class Solution {
 
                 if shorterIndex > shorter.startIndex {
                     shorterIndex = shorter.index(before: shorterIndex)
-                } else if shorterIndex == shorter.startIndex && shorterEnds == false {
+                } else if shorterIndex == shorter.startIndex, shorterEnds == false {
                     shorterEnds = true
                 }
             } else {
@@ -30,7 +30,7 @@ class Solution {
             }
             if longerIndex > longer.startIndex {
                 longerIndex = longer.index(before: longerIndex)
-            } else if longerIndex == longer.startIndex && longerEnds == false {
+            } else if longerIndex == longer.startIndex, longerEnds == false {
                 longerEnds = true
             }
         }
@@ -39,6 +39,7 @@ class Solution {
         }
         return String(output.reversed())
     }
+
     func addBinary(_ a: String, _ b: String) -> String {
         return adder(a.count > b.count ? a : b, a.count > b.count ? b : a)
     }

@@ -6,6 +6,7 @@ class Solution {
         array.forEach { max = $0 > max ? $0 : max }
         return max
     }
+
     func maxDepth(_ root: TreeNode?) -> Int {
         guard let tree = root else { return 0 }
         var temp = [Int]()

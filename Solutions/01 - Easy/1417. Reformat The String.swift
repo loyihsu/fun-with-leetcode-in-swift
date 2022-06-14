@@ -12,7 +12,7 @@ class Solution {
         }
         if digits.count == chars.count || digits.count == chars.count + 1 || digits.count == chars.count - 1 {
             var output = ""
-            while !digits.isEmpty && !chars.isEmpty {
+            while !digits.isEmpty, !chars.isEmpty {
                 if chars.count > digits.count {
                     output.append(chars.popLast()!)
                     output.append(digits.popLast()!)

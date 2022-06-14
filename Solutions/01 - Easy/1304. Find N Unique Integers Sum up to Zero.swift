@@ -9,7 +9,7 @@ class Solution {
             output.append(0)
             resting -= 1
         }
-        for val in 1...resting/2 {
+        for val in 1 ... resting / 2 {
             output.append(val)
             output.append(-val)
         }

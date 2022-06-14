@@ -14,6 +14,7 @@ class Solution {
         output.append(temp)
         return output
     }
+
     func numUniqueEmails(_ emails: [String]) -> Int {
         var output = Set<String>()
         for email in emails {

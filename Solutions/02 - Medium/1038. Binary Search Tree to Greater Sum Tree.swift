@@ -7,6 +7,7 @@ class Solution {
 
         return root
     }
+
     func search(_ root: TreeNode?, sum: inout Int) {
         guard let root = root else { return }
 

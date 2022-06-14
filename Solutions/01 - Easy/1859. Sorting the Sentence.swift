@@ -21,11 +21,12 @@ class Solution {
         }
         return (result, max: max)
     }
+
     func sortSentence(_ s: String) -> String {
         let parsed = generateList(s)
         var result = [String](repeating: "", count: parsed.max)
         for (idx, str) in parsed.0 {
-            result[idx-1] = str
+            result[idx - 1] = str
         }
         return result.joined(separator: " ")
     }

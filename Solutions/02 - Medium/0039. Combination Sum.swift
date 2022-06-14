@@ -3,7 +3,7 @@
 class Solution {
     func combinationSum(_ candidates: [Int], _ target: Int) -> [[Int]] {
         var combination = [Int](repeating: 0, count: candidates.count)
-        var results = [Set<[Int]>](repeating: Set<[Int]>(), count: target+1)
+        var results = [Set<[Int]>](repeating: Set<[Int]>(), count: target + 1)
         results[0] = [combination]
         for idx in results.indices where !results[idx].isEmpty {
             for jdx in candidates.indices where idx + candidates[jdx] < results.count {
@@ -13,6 +13,6 @@ class Solution {
                 }
             }
         }
-        return results[target].map({ result in result.enumerated().flatMap({ [Int](repeating: candidates[$0], count: $1) }) })
+        return results[target].map { result in result.enumerated().flatMap { [Int](repeating: candidates[$0], count: $1) } }
     }
 }

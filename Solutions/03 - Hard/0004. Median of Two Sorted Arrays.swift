@@ -3,14 +3,14 @@
 class Solution {
     func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
         let allElementsCount = nums1.count + nums2.count
-        var centre = (allElementsCount/2 + 1, allElementsCount/2 + 1)
+        var centre = (allElementsCount / 2 + 1, allElementsCount / 2 + 1)
         if allElementsCount % 2 == 0 {
-            centre = (allElementsCount/2, allElementsCount/2 + 1)
+            centre = (allElementsCount / 2, allElementsCount / 2 + 1)
         }
         var count = 0, index1 = 0, index2 = 0, prev = 0, current = 0
         while centre.0 == centre.1 ? count < centre.0 : count < centre.1 {
             prev = current
-            if index1 < nums1.count && index2 < nums2.count {
+            if index1 < nums1.count, index2 < nums2.count {
                 if nums1[index1] < nums2[index2] {
                     current = nums1[index1]
                     index1 += 1

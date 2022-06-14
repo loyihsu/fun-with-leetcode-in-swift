@@ -14,7 +14,7 @@ class Solution {
         while index < s.endIndex {
             if s.distance(from: index, to: s.endIndex) > 2 {
                 if s[s.index(index, offsetBy: 2)] == "#" {
-                    output.append(decrypt[s[index..<s.index(index, offsetBy: 2)]]!)
+                    output.append(decrypt[s[index ..< s.index(index, offsetBy: 2)]]!)
                     index = s.index(index, offsetBy: 3)
                     continue
                 }

@@ -8,6 +8,7 @@ class Solution {
         }
         return map
     }
+
     func checkAlmostEquivalent(_ word1: String, _ word2: String) -> Bool {
         let first = createMap(word1), second = createMap(word2)
         let keys = Set(first.keys).union(second.keys)

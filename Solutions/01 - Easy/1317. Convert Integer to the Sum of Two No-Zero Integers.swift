@@ -12,11 +12,12 @@ class Solution {
         }
         return false
     }
+
     func getNoZeroIntegers(_ n: Int) -> [Int] {
         var a = 1
-        while containsZero(a) || containsZero(n-a) {
+        while containsZero(a) || containsZero(n - a) {
             a += 1
         }
-        return [a, n-a]
+        return [a, n - a]
     }
 }

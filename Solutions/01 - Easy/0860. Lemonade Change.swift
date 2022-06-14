@@ -14,7 +14,7 @@ class Solution {
                     return false
                 }
             } else {
-                if myChanges[0] > 0 && myChanges[1] > 0 {
+                if myChanges[0] > 0, myChanges[1] > 0 {
                     myChanges[0] -= 1
                     myChanges[1] -= 1
                 } else if myChanges[0] >= 3 {

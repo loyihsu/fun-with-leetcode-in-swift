@@ -5,8 +5,8 @@ class Solution {
         guard nums.count >= 2 else { return 0 }
         let nums = nums.sorted()
         var maxGap = 0
-        for idx in 0..<nums.count-1 {
-            maxGap = max(nums[idx+1]-nums[idx], maxGap)
+        for idx in 0 ..< nums.count - 1 {
+            maxGap = max(nums[idx + 1] - nums[idx], maxGap)
         }
         return maxGap
     }

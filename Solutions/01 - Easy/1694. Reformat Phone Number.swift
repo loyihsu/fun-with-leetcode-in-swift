@@ -8,22 +8,22 @@ class Solution {
                 output.append("-")
             }
             if temp.count > 4 {
-                for _ in 0..<3 {
+                for _ in 0 ..< 3 {
                     output.append(temp.popLast()!)
                 }
             } else if temp.count == 4 {
-                for idx in 0..<4 {
+                for idx in 0 ..< 4 {
                     if idx == 2 {
                         output.append("-")
                     }
                     output.append(temp.popLast()!)
                 }
             } else if temp.count == 3 {
-                for _ in 0..<3 {
+                for _ in 0 ..< 3 {
                     output.append(temp.popLast()!)
                 }
             } else {
-                for _ in 0..<2 {
+                for _ in 0 ..< 2 {
                     output.append(temp.popLast()!)
                 }
             }

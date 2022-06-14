@@ -8,7 +8,7 @@ class Solution {
             map[edge[1]] = (map[edge[1]] ?? 0) + 1
         }
         for key in map.keys where (map[key] ?? 0) > max.0 {
-            max = ((map[key] ?? 0), key)
+            max = (map[key] ?? 0, key)
         }
         return max.1
     }

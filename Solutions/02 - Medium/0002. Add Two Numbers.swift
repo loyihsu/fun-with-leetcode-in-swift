@@ -25,7 +25,7 @@ class Solution {
             carry = newValue >= 10 ? 1 : 0
             newValue = carry != 0 ? newValue - 10 : newValue
 
-            let newNode = ListNode.init(newValue)
+            let newNode = ListNode(newValue)
             if answer == nil {
                 answer = newNode
             } else {

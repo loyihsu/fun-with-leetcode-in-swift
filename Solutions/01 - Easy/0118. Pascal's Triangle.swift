@@ -8,16 +8,17 @@ class Solution {
         if let solved = map[row] {
             return solved
         } else {
-            let last = generateRow(row-1)
+            let last = generateRow(row - 1)
             var output = [Int](repeating: 1, count: row)
-            for idx in 0..<last.count - 1 {
+            for idx in 0 ..< last.count - 1 {
                 output[idx + 1] = last[idx] + last[idx + 1]
             }
             map[row] = output
             return output
         }
     }
+
     func generate(_ numRows: Int) -> [[Int]] {
-        return (1...numRows).map({ generateRow($0) })
+        return (1 ... numRows).map { generateRow($0) }
     }
 }

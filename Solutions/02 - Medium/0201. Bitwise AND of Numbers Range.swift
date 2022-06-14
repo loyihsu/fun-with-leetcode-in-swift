@@ -4,7 +4,7 @@ class Solution {
     func rangeBitwiseAnd(_ m: Int, _ n: Int) -> Int {
         var n = n
         while m < n {
-            n &= (n-1)
+            n &= (n - 1)
         }
         return n
     }

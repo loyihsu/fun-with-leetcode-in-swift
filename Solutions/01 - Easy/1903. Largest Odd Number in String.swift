@@ -7,7 +7,7 @@ class Solution {
             return num
         }
         for idx in num.indices.reversed() where Int("\(num[idx])")! % 2 != 0 {
-            return String(num[num.startIndex...idx])
+            return String(num[num.startIndex ... idx])
         }
         return ""
     }

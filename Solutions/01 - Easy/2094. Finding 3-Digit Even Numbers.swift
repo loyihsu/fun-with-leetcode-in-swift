@@ -12,10 +12,11 @@ class Solution {
         }
         return true
     }
+
     func findEvenNumbers(_ digits: [Int]) -> [Int] {
         var output = [Int](), map = [Int: Int]()
-        digits.enumerated().forEach({ map[$1, default: 0] += 1 })
-        for idx in 100...999 where idx % 2 == 0 {
+        digits.enumerated().forEach { map[$1, default: 0] += 1 }
+        for idx in 100 ... 999 where idx % 2 == 0 {
             if canConstruct(idx, with: map) {
                 output.append(idx)
             }

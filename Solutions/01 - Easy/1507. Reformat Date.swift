@@ -5,10 +5,11 @@ class Solution {
         let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
         var res = [String: String]()
         for (index, month) in months.enumerated() {
-            res[month] = index + 1 < 10 ? "0\(index+1)" : "\(index + 1)"
+            res[month] = index + 1 < 10 ? "0\(index + 1)" : "\(index + 1)"
         }
         return res
     }
+
     func reformatDate(_ date: String) -> String {
         var temp = "", pos = 0, res = [String](repeating: "", count: 3)
         let months = generateMonthMap()

@@ -1,7 +1,7 @@
 // Problem: https://leetcode.com/problems/maximum-69-number/
 
 class Solution {
-    func maximum69Number (_ num: Int) -> Int {
+    func maximum69Number(_ num: Int) -> Int {
         var n = [Int](repeating: 0, count: 4), input = num, output = 0, acc = 0, index = 3, flag = false
         while input > 0 {
             n[acc] = input % 10

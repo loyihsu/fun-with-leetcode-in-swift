@@ -14,7 +14,7 @@ class Solution {
                 maxCount = curCount > maxCount ? curCount : maxCount
 
                 if let pos = cur.firstIndex(of: c) {
-                    cur = "\(cur[cur.index(after: pos)..<cur.endIndex])\(c)"
+                    cur = "\(cur[cur.index(after: pos) ..< cur.endIndex])\(c)"
                     curCount = cur.count
                 } else {
                     cur = "\(c)"

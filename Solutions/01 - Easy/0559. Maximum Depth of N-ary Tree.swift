@@ -15,6 +15,7 @@ class Solution {
             return max
         }
     }
+
     func maxDepth(_ root: Node?) -> Int {
         guard let root = root else { return 0 }
         guard root.children.isEmpty != true else { return 1 }

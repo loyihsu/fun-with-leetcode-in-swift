@@ -9,7 +9,7 @@ class Solution {
                                            "4": 4, "5": 5, "6": 6, "7": 7,
                                            "8": 8, "9": 9]
 
-        for i in 0..<big.count {
+        for i in 0 ..< big.count {
             temp = (i < small.count ? converter[small[i]]! : 0) + converter[big[i]]! + (carry ? 1 : 0)
             output.append("\(temp < 10 ? temp : temp % 10)")
             carry = temp >= 10 ? true : false

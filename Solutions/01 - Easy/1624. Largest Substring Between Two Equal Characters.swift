@@ -1,8 +1,9 @@
 // Problem: https://leetcode.com/problems/largest-substring-between-two-equal-characters/
 
 extension Character {
-    var integerValue: Int { Int((self.unicodeScalars.first?.value)!) - 97 }
+    var integerValue: Int { Int((unicodeScalars.first?.value)!) - 97 }
 }
+
 class Solution {
     func maxLengthBetweenEqualCharacters(_ s: String) -> Int {
         var map = [(Int, Int)](repeating: (-1, -1), count: 26), output = -1

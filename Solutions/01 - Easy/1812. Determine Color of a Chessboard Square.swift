@@ -5,12 +5,13 @@ class Solution {
         let oddblack = Set("aceg")
         if let last = coordinates.last,
            let first = coordinates.first,
-           let int = Int("\(last)") {
-               if oddblack.contains(first) {
-                   return int % 2 == 0
-               } else {
-                   return int % 2 == 1
-               }
+           let int = Int("\(last)")
+        {
+            if oddblack.contains(first) {
+                return int % 2 == 0
+            } else {
+                return int % 2 == 1
+            }
         }
         return false
     }

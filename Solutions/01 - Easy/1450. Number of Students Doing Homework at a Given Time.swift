@@ -4,7 +4,7 @@ class Solution {
     func busyStudent(_ startTime: [Int], _ endTime: [Int], _ queryTime: Int) -> Int {
         var studentCount = 0
         for index in startTime.indices where queryTime >= startTime[index] && queryTime <= endTime[index] {
-                studentCount += 1
+            studentCount += 1
         }
         return studentCount
     }

@@ -7,9 +7,11 @@ class Solution {
             map[$0] = $1
         }
     }
+
     func helper(_ number: Int) -> String {
         return "\(map[number - 1 >= 0 ? number - 1 : 25]!)"
     }
+
     func convertToTitle(_ n: Int) -> String {
         var temp = n, output = ""
         while temp > 0 {

@@ -4,7 +4,7 @@ class Solution {
     func validMountainArray(_ arr: [Int]) -> Bool {
         guard arr.count >= 3 else { return false }
         let maximum = arr.max()
-        var up = true, last: Int? = nil
+        var up = true, last: Int?
 
         for idx in arr.indices {
             if let last = last {

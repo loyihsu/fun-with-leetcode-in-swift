@@ -8,8 +8,9 @@ class ListNode {
         self.next = next
     }
 }
+
 class LinkedStack {
-    var top: ListNode? = nil
+    var top: ListNode?
     func push(_ val: Int) {
         let newNode = ListNode(val)
         if top != nil {
@@ -17,24 +18,29 @@ class LinkedStack {
         }
         top = newNode
     }
+
     func pop() -> Int {
         let val = top!.value
         top = top?.next
         return val
     }
+
     func peek() -> Int {
         return top!.value
     }
+
     var isEmpty: Bool {
         return top == nil
     }
 }
+
 class MyQueue {
     var left = LinkedStack(), right = LinkedStack() // (left-top)[left][right](right-top)
     /** Push element x to the back of queue. */
     func push(_ x: Int) {
         right.push(x)
     }
+
     /** Removes the element from in front of queue and returns that element. */
     func pop() -> Int {
         if left.isEmpty {
@@ -42,6 +48,7 @@ class MyQueue {
         }
         return left.pop()
     }
+
     /** Get the front element. */
     func peek() -> Int {
         if left.isEmpty {
@@ -49,10 +56,12 @@ class MyQueue {
         }
         return left.peek()
     }
+
     /** Returns whether the queue is empty. */
     func empty() -> Bool {
         return left.isEmpty && right.isEmpty
     }
+
     private func charge() {
         while !right.isEmpty {
             left.push(right.pop())

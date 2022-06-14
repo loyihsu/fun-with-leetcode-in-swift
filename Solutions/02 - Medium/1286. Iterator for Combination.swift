@@ -6,6 +6,7 @@ class CombinationIterator {
         preprocessing("", characters, length: combinationLength)
         storage.sort()
     }
+
     private func preprocessing(_ current: String, _ resting: String, length: Int) {
         if current.count == length {
             storage.append(current)
@@ -15,9 +16,11 @@ class CombinationIterator {
             preprocessing("\(current)\(first)", rest, length: length)
         }
     }
+
     func next() -> String {
         return storage.removeFirst()
     }
+
     func hasNext() -> Bool {
         return !storage.isEmpty
     }

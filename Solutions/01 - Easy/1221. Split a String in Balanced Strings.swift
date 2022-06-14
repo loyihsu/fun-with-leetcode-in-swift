@@ -6,7 +6,7 @@ class Solution {
         for c in s {
             if c == "R" { rights += 1 } else if c == "L" { lefts += 1 }
             temp.append(c)
-            if lefts == rights && temp.isEmpty == false {
+            if lefts == rights, temp.isEmpty == false {
                 o.append(temp)
                 temp = ""
             }

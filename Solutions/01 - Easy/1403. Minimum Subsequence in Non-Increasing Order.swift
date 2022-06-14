@@ -11,6 +11,6 @@ class Solution {
             pos += 1
         }
 
-        return Array(sortedNums[0..<pos])
+        return Array(sortedNums[0 ..< pos])
     }
 }

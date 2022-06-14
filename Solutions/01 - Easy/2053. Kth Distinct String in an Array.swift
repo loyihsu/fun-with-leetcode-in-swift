@@ -6,7 +6,7 @@ class Solution {
         for item in arr {
             counter[item, default: 0] += 1
         }
-        let keys = Set(counter.filter({ $1 == 1 }).keys)
+        let keys = Set(counter.filter { $1 == 1 }.keys)
         for item in arr where keys.contains(item) {
             k -= 1
             if k == 0 {

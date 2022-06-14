@@ -5,8 +5,8 @@ class Solution {
         let broken = Set(brokenLetters)
         return text
             .components(separatedBy: " ")
-            .map({ Set($0).intersection(broken) })
-            .filter({ $0.isEmpty })
+            .map { Set($0).intersection(broken) }
+            .filter { $0.isEmpty }
             .count
     }
 }

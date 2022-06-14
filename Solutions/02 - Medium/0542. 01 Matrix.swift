@@ -17,8 +17,8 @@ class Solution {
                 return index.2
             } else {
                 for (x, y) in dirs {
-                    if validate(index.0+x, x_max) && validate(index.1+y, y_max) {
-                        queue.append((index.0+x, index.1+y, index.2+1))
+                    if validate(index.0 + x, x_max), validate(index.1 + y, y_max) {
+                        queue.append((index.0 + x, index.1 + y, index.2 + 1))
                     }
                 }
             }

@@ -8,6 +8,7 @@ class Solution {
         }
         return output
     }
+
     private func canPickChecker(_ word: String, _ lettersMap: [Character: Int]) -> Bool {
         var counter = [Character: Int]()
         for letter in word {
@@ -24,9 +25,11 @@ class Solution {
         }
         return true
     }
+
     private func scorer(_ word: String, _ score: [Int]) -> Int {
-        return word.reduce(0, { $0 + score[Int($1.asciiValue!) - 97] })
+        return word.reduce(0) { $0 + score[Int($1.asciiValue!) - 97] }
     }
+
     private func canPick(_ word: String, _ restingMap: [Character: Int]) -> [Character: Int]? {
         var restingMap = restingMap
         for letter in word {
@@ -38,6 +41,7 @@ class Solution {
         }
         return restingMap
     }
+
     func restChoice(_ words: [String], _ restingMap: [Character: Int], _ score: [Int], _ tempScore: Int) -> Int {
         guard words.count > 0 else { return tempScore }
         var values = [Int]()
@@ -48,9 +52,10 @@ class Solution {
         values.append(restChoice(newArray, restingMap, score, tempScore))
         return values.max()!
     }
+
     func maxScoreWords(_ words: [String], _ letters: [Character], _ score: [Int]) -> Int {
         var allLetters = counterMapping(letters)
-        let canPick = words.filter({ canPickChecker($0, allLetters) })
+        let canPick = words.filter { canPickChecker($0, allLetters) }
         return restChoice(words, allLetters, score, 0)
     }
 }

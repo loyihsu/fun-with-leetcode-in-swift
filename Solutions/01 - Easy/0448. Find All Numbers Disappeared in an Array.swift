@@ -15,9 +15,10 @@ class Solution {
         }
         return nil
     }
+
     func findDisappearedNumbers(_ nums: [Int]) -> [Int] {
         guard !nums.isEmpty else { return [] }
-        var arr = Array(1...nums.count)
+        var arr = Array(1 ... nums.count)
         for num in nums {
             if let idx = findIndexOf(num, in: arr) {
                 arr.remove(at: idx)

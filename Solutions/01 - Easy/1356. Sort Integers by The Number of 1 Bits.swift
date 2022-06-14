@@ -9,11 +9,13 @@ class Solution {
         }
         return count
     }
+
     func generateBitMap(_ arr: [Int]) -> [Int: [Int]] {
         var output = [Int: [Int]]()
         arr.forEach { output[countOnes($0), default: []].append($0) }
         return output
     }
+
     func sortByBits(_ arr: [Int]) -> [Int] {
         return generateBitMap(arr).sorted { $0.key < $1.key }.flatMap { $1.sorted() }
     }

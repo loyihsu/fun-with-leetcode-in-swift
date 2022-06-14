@@ -7,12 +7,12 @@ class Solution {
             if arr.count == size {
                 sum += arr.reduce(0, +)
             } else {
-                for index in 0...arr.count-size {
+                for index in 0 ... arr.count - size {
                     var temp = 0
                     var debug = [Int]()
-                    for offset in 0..<size {
-                        temp += arr[index+offset]
-                        debug.append(arr[index+offset])
+                    for offset in 0 ..< size {
+                        temp += arr[index + offset]
+                        debug.append(arr[index + offset])
                     }
                     sum += temp
                 }

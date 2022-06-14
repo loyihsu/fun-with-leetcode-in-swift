@@ -9,7 +9,7 @@ class Solution {
         result[0] = 1
 
         for coin in coins where coin <= amount {
-            for current in coin...amount {
+            for current in coin ... amount {
                 result[current] += result[current - coin]
             }
         }

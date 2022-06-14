@@ -3,7 +3,7 @@
 class Solution {
     func minTimeToVisitAllPoints(_ points: [[Int]]) -> Int {
         var pos = (points[0][0], points[0][1]), res = 0
-        for idx in 1..<points.count {
+        for idx in 1 ..< points.count {
             while points[idx][0] != pos.0 || points[idx][1] != pos.1 {
                 if pos.0 < points[idx][0] {
                     pos.0 += 1

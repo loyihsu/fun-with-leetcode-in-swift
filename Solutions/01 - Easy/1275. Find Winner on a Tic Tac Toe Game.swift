@@ -14,18 +14,19 @@ class Solution {
         }
         return winner
     }
-    func winnerDecision(_ board: [[Character]], _ winner: String) -> String {
-        for idx in 0..<3 {
-            if board[idx][0] != " " && board[idx][0] == board[idx][1] && board[idx][1] == board[idx][2] {
+
+    func winnerDecision(_ board: [[Character]], _: String) -> String {
+        for idx in 0 ..< 3 {
+            if board[idx][0] != " ", board[idx][0] == board[idx][1], board[idx][1] == board[idx][2] {
                 return board[idx][0] == "X" ? "A" : "B"
             }
-            if board[0][idx] != " " && board[0][idx] == board[1][idx] && board[1][idx] == board[2][idx] {
+            if board[0][idx] != " ", board[0][idx] == board[1][idx], board[1][idx] == board[2][idx] {
                 return board[0][idx] == "X" ? "A" : "B"
             }
         }
-        if board[0][0] != " " && board[0][0] == board[1][1] && board[1][1] == board[2][2] {
+        if board[0][0] != " ", board[0][0] == board[1][1], board[1][1] == board[2][2] {
             return board[0][0] == "X" ? "A" : "B"
-        } else if board[2][0] != " " && board[2][0] == board[1][1] && board[1][1] == board[0][2] {
+        } else if board[2][0] != " ", board[2][0] == board[1][1], board[1][1] == board[0][2] {
             return board[2][0] == "X" ? "A" : "B"
         }
         var flag = false

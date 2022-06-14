@@ -4,7 +4,7 @@ class Solution {
     func finalPrices(_ prices: [Int]) -> [Int] {
         var output = prices
         for (index, price) in prices.enumerated() {
-            for jndex in index+1..<prices.count where prices[jndex] <= price {
+            for jndex in index + 1 ..< prices.count where prices[jndex] <= price {
                 output[index] -= prices[jndex]
                 break
             }

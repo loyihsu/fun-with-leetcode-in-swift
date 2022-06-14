@@ -12,6 +12,6 @@ class Solution {
             }
             count += temp
         }
-        return count % 1_0000_0000_7
+        return count % 1_000_000_007
     }
 }

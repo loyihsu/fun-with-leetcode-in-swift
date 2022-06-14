@@ -9,6 +9,7 @@ class Solution {
         }
         return [max, maxPos]
     }
+
     func maxProduct(_ nums: [Int]) -> Int {
         if nums.count == 2 {
             return (nums[0] - 1) * (nums[1] - 1)

@@ -9,8 +9,9 @@ class Solution {
         }
         return output
     }
+
     func createList(_ array: [Int]) -> ListNode? {
-        var output: ListNode? = nil, index = array.count - 1
+        var output: ListNode?, index = array.count - 1
         while index >= 0 {
             var newNode = ListNode(array[index], output)
             output = newNode
@@ -18,6 +19,7 @@ class Solution {
         }
         return output
     }
+
     func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         var array = createArray(l1)
         array.append(contentsOf: createArray(l2))

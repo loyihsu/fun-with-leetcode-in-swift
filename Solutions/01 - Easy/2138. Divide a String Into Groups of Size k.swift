@@ -8,7 +8,7 @@ class Solution {
         while idx < s.endIndex {
             let notEnding = k <= s.count && idx < s.index(s.endIndex, offsetBy: -k + 1)
             let last = notEnding ? s.index(idx, offsetBy: k) : s.endIndex
-            output[count] = String(s[idx..<last]) + (notEnding ? "" :  String(repeating: fill, count: k-remain))
+            output[count] = String(s[idx ..< last]) + (notEnding ? "" : String(repeating: fill, count: k - remain))
             idx = last
             count += 1
         }

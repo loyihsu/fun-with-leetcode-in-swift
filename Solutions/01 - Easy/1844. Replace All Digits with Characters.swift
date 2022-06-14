@@ -9,6 +9,7 @@ class Solution {
         }
         return Character(UnicodeScalar(value)!)
     }
+
     func replaceDigits(_ str: String) -> String {
         var output = ""
         for (idx, char) in str.enumerated() {

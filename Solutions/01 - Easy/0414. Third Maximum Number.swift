@@ -3,7 +3,7 @@
 class Solution {
     private func findThirdMax(in array: [Int]) -> Int {
         var temp = array, max = (Int.min, Int.min)
-        for i in 0..<3 {
+        for i in 0 ..< 3 {
             max = (Int.min, Int.min)
             for (index, item) in temp.enumerated() {
                 if item > max.1 || max.0 == Int.min {

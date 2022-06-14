@@ -8,6 +8,7 @@ class Solution {
         }
         return min
     }
+
     func findRestaurant(_ list1: [String], _ list2: [String]) -> [String] {
         var map = [String: Int](), commons = list1.filter { list2.contains($0) }
         for (index, value) in list1.enumerated() where commons.contains(value) {

@@ -6,6 +6,7 @@ class Solution {
         let ys = (centre.1 - point.1) * (centre.1 - point.1)
         return sqrt(Double(xs) + Double(ys))
     }
+
     func countPoints(_ points: [[Int]], _ queries: [[Int]]) -> [Int] {
         var output = [Int]()
         for query in queries {

@@ -2,7 +2,7 @@
 
 class Solution {
     func insertIntoBST(_ root: TreeNode?, _ val: Int) -> TreeNode? {
-        guard root != nil else { return TreeNode.init(val) }
+        guard root != nil else { return TreeNode(val) }
         var temp = root, sig = false
 
         while !sig {
@@ -10,14 +10,14 @@ class Solution {
                 if temp!.left != nil {
                     temp = temp!.left
                 } else {
-                    temp!.left = TreeNode.init(val)
+                    temp!.left = TreeNode(val)
                     sig = true
                 }
             } else {
                 if temp!.right != nil {
                     temp = temp!.right
                 } else {
-                    temp!.right = TreeNode.init(val)
+                    temp!.right = TreeNode(val)
                     sig = true
                 }
             }

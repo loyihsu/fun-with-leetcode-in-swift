@@ -11,9 +11,9 @@ class Solution {
             sum += $0
         }
         var diff = -sum
-        for num in 0...max {
+        for num in 0 ... max {
             diff += num
         }
-        return diff == 0 && nums.contains(0) ? max+1 : diff
+        return diff == 0 && nums.contains(0) ? max + 1 : diff
     }
 }

@@ -5,8 +5,8 @@ class Solution {
         var map = [Int: Int]()
         arr.forEach { map[$0] = (map[$0] ?? 0) + 1 }
         for value in arr {
-            if let val = map[value], let double = map[2*value] {
-                if value == 2 * value && double > 1 {
+            if let val = map[value], let double = map[2 * value] {
+                if value == 2 * value, double > 1 {
                     return true
                 } else if value != 2 * value {
                     return true

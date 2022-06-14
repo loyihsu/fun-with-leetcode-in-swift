@@ -12,6 +12,7 @@ class Solution {
         }
         return temp
     }
+
     func isSameAfterReversals(_ num: Int) -> Bool {
         return createReversedInt(createReversedInt(num)) == num
     }

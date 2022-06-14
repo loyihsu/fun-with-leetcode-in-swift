@@ -5,7 +5,7 @@ class Solution {
         var count = 0, flag = false
         for num in nums {
             if num == 1 {
-                if count < k && flag {
+                if count < k, flag {
                     return false
                 }
                 flag = true

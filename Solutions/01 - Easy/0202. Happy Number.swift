@@ -10,6 +10,7 @@ class Solution {
         }
         return output
     }
+
     func isHappy(_ n: Int) -> Bool {
         var temp = getSqrDigs(n), dic = [Int: Bool]()
         while temp != 1 {

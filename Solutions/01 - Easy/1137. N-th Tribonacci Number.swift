@@ -6,10 +6,10 @@ class Solution {
         guard n != 0 else {
             return 0
         }
-        guard n != 1 && n != 2 else {
+        guard n != 1, n != 2 else {
             return 1
         }
-        for idx in 0..<n-2 {
+        for idx in 0 ..< n - 2 {
             window = (window.1, window.2, window.0 + window.1 + window.2)
         }
         return window.2

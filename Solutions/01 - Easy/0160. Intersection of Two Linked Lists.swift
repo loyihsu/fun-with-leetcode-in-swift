@@ -9,9 +9,10 @@ class Solution {
         }
         return res
     }
+
     func getIntersectionNode(_ headA: ListNode?, _ headB: ListNode?) -> ListNode? {
         var a = createStack(from: headA), b = createStack(from: headB), res: ListNode?
-        while a.isEmpty == false && b.isEmpty == false {
+        while a.isEmpty == false, b.isEmpty == false {
             var i = a.removeLast(), j = b.removeLast()
             if i === j {
                 res = i

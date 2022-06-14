@@ -12,7 +12,7 @@ class Solution {
                 if !flag {
                     break
                 }
-                flag = temp[jdx] > temp[jdx-1]
+                flag = temp[jdx] > temp[jdx - 1]
             }
             tracker[idx] = flag
             if flag {

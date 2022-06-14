@@ -6,8 +6,8 @@ class Codec {
 
     func createRandomString() -> String {
         var output = ""
-        for i in 0..<6 {
-            output.append(setsArray[Int.random(in: 0..<62)])
+        for i in 0 ..< 6 {
+            output.append(setsArray[Int.random(in: 0 ..< 62)])
         }
         return output
     }

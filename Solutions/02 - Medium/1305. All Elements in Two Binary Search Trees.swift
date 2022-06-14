@@ -13,7 +13,7 @@ class Solution {
         var index = 0, listIndex = 0, list2Index = 0
 
         while index < output.count {
-            if listIndex < list.count && list2Index < list2.count {
+            if listIndex < list.count, list2Index < list2.count {
                 if list[listIndex] < list2[list2Index] {
                     output[index] = list[listIndex]
                     listIndex += 1

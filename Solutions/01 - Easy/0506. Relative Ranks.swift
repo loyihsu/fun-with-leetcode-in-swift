@@ -9,7 +9,7 @@ class Solution {
             case 0: return "Gold Medal"
             case 1: return "Silver Medal"
             case 2: return "Bronze Medal"
-            default: return String(level[$0, default: -1]+1)
+            default: return String(level[$0, default: -1] + 1)
             }
         }
     }

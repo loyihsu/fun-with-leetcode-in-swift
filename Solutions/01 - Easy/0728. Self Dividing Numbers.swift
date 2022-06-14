@@ -3,7 +3,7 @@
 class Solution {
     func selfDividingNumbers(_ left: Int, _ right: Int) -> [Int] {
         var output = [Int](), n = 0, k = 0, flag = true
-        for num in left...right {
+        for num in left ... right {
             n = num
             flag = true
             while n != 0 {

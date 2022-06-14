@@ -5,6 +5,7 @@ class Solution {
         let str = normalise(s)
         return performPlusMinus(str)
     }
+
     func normalise(_ s: String) -> String {
         let str = s.components(separatedBy: .whitespaces).joined()
         var res = "", index = s.startIndex
@@ -29,6 +30,7 @@ class Solution {
         }
         return res
     }
+
     func precalc(_ s: String, _ pos: String.Index) -> (Int, String.Index) {
         var res = "", index = pos
         while s[index] != ")" {
@@ -52,6 +54,7 @@ class Solution {
         }
         return (performPlusMinus(res), s.index(after: index))
     }
+
     func performPlusMinus(_ str: String) -> Int {
         guard Int(str) == nil else { return Int(str)! }
         guard str.contains("+") || str.contains("-") else { return Int(str)! }

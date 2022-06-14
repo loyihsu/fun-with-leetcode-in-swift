@@ -12,7 +12,7 @@ class Solution {
             }
         }
         for (key, val) in sortedMap {
-            for _ in 0..<val {
+            for _ in 0 ..< val {
                 output[pos] = key
                 pos += 1
             }
