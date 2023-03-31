@@ -14,6 +14,6 @@ class Solution {
     }
 
     func backspaceCompare(_ S: String, _ T: String) -> Bool {
-        return generateString(S) == generateString(T)
+        generateString(S) == generateString(T)
     }
 }

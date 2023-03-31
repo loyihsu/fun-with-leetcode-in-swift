@@ -2,7 +2,7 @@
 
 class Solution {
     func invertTree(_ root: TreeNode?) -> TreeNode? {
-        guard let root = root else { return nil }
+        guard let root else { return nil }
         if let left = root.left {
             root.left = invertTree(left)
         }

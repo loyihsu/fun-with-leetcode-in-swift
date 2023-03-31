@@ -2,7 +2,7 @@
 
 class Solution {
     func hasPathSum(_ root: TreeNode?, _ targetSum: Int) -> Bool {
-        guard let root = root else { return false }
+        guard let root else { return false }
         var stack: [(node: TreeNode, left: Int)] = [(root, targetSum)]
         while let cur = stack.popLast() {
             if cur.node.left == nil, cur.node.right == nil, cur.left == cur.node.val {

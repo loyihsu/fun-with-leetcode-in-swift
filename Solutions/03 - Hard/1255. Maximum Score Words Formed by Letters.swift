@@ -27,7 +27,7 @@ class Solution {
     }
 
     private func scorer(_ word: String, _ score: [Int]) -> Int {
-        return word.reduce(0) { $0 + score[Int($1.asciiValue!) - 97] }
+        word.reduce(0) { $0 + score[Int($1.asciiValue!) - 97] }
     }
 
     private func canPick(_ word: String, _ restingMap: [Character: Int]) -> [Character: Int]? {

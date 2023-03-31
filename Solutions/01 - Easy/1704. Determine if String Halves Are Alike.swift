@@ -2,7 +2,7 @@
 
 class Solution {
     private func countVowels(in string: Substring) -> Int {
-        return string.filter { "aeiou".contains($0) }.count
+        string.filter { "aeiou".contains($0) }.count
     }
 
     private func halves(of str: String) -> (Substring, Substring) {

@@ -17,6 +17,6 @@ class Solution {
     }
 
     func sortByBits(_ arr: [Int]) -> [Int] {
-        return generateBitMap(arr).sorted { $0.key < $1.key }.flatMap { $1.sorted() }
+        generateBitMap(arr).sorted { $0.key < $1.key }.flatMap { $1.sorted() }
     }
 }

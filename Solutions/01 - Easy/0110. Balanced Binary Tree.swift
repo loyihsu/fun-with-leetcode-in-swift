@@ -18,7 +18,7 @@ class Solution {
     }
 
     func isBalanced(_ root: TreeNode?) -> Bool {
-        guard let root = root else { return true }
+        guard let root else { return true }
         var depths: (left: Int, right: Int) = (0, 0)
         if let left = root.left {
             depths.left = self.depths(left)

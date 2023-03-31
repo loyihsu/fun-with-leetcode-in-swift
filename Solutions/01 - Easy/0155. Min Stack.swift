@@ -21,10 +21,10 @@ class MinStack {
     }
 
     func top() -> Int {
-        return array.last!
+        array.last!
     }
 
     func getMin() -> Int {
-        return min
+        min
     }
 }

@@ -5,7 +5,7 @@ class Solution {
     let emptyMap = [Int](repeating: 0, count: 26)
 
     func toIndex(_ char: Character) -> Int {
-        return Int(char.asciiValue! - aVal)
+        Int(char.asciiValue! - aVal)
     }
 
     func generateIndexMap(_ str: String) -> [Int] {

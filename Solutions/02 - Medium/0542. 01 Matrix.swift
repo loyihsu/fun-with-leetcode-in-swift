@@ -2,7 +2,7 @@
 
 class Solution {
     func validate(_ cur: Int, _ max: Int) -> Bool {
-        return cur >= 0 && cur < max
+        cur >= 0 && cur < max
     }
 
     func bfs_closest(_ matrix: [[Int]], _ i: Int, _ j: Int) -> Int {

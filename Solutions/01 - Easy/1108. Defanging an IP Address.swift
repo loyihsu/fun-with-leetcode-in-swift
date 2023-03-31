@@ -2,6 +2,6 @@
 
 class Solution {
     func defangIPaddr(_ address: String) -> String {
-        return address.components(separatedBy: ".").joined(separator: "[.]")
+        address.components(separatedBy: ".").joined(separator: "[.]")
     }
 }

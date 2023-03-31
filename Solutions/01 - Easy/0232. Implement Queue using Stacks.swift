@@ -26,11 +26,11 @@ class LinkedStack {
     }
 
     func peek() -> Int {
-        return top!.value
+        top!.value
     }
 
     var isEmpty: Bool {
-        return top == nil
+        top == nil
     }
 }
 
@@ -59,7 +59,7 @@ class MyQueue {
 
     /** Returns whether the queue is empty. */
     func empty() -> Bool {
-        return left.isEmpty && right.isEmpty
+        left.isEmpty && right.isEmpty
     }
 
     private func charge() {

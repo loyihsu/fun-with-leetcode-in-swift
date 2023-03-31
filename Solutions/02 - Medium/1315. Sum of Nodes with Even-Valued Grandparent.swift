@@ -26,6 +26,6 @@ class Solution {
     }
 
     func sumEvenGrandparent(_ root: TreeNode?) -> Int {
-        return makeSum(of: root, 0)
+        makeSum(of: root, 0)
     }
 }

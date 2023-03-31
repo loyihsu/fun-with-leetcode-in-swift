@@ -2,7 +2,7 @@
 
 class Solution {
     func absDiff(_ val1: Int, _ val2: Int) -> Int {
-        return val1 > val2 ? val1 - val2 : val2 - val1
+        val1 > val2 ? val1 - val2 : val2 - val1
     }
 
     func minimumAbsDifference(_ arr: [Int]) -> [[Int]] {

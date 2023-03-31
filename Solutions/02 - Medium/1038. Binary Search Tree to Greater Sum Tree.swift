@@ -9,7 +9,7 @@ class Solution {
     }
 
     func search(_ root: TreeNode?, sum: inout Int) {
-        guard let root = root else { return }
+        guard let root else { return }
 
         search(root.right, sum: &sum)
         sum += root.val

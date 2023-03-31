@@ -8,6 +8,6 @@ class Solution {
     }
 
     func countWords(_ words1: [String], _ words2: [String]) -> Int {
-        return exactlyOnce(words1).intersection(exactlyOnce(words2)).count
+        exactlyOnce(words1).intersection(exactlyOnce(words2)).count
     }
 }

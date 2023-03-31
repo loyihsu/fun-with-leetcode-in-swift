@@ -4,7 +4,7 @@ class LinkedList {
     var head: ListNode?
     var tail: ListNode?
     var isEmpty: Bool {
-        return head == nil
+        head == nil
     }
 }
 

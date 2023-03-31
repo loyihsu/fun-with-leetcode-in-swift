@@ -18,10 +18,10 @@ class CombinationIterator {
     }
 
     func next() -> String {
-        return storage.removeFirst()
+        storage.removeFirst()
     }
 
     func hasNext() -> Bool {
-        return !storage.isEmpty
+        !storage.isEmpty
     }
 }

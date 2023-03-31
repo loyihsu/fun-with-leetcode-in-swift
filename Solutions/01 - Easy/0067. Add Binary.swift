@@ -41,6 +41,6 @@ class Solution {
     }
 
     func addBinary(_ a: String, _ b: String) -> String {
-        return adder(a.count > b.count ? a : b, a.count > b.count ? b : a)
+        adder(a.count > b.count ? a : b, a.count > b.count ? b : a)
     }
 }

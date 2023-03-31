@@ -7,7 +7,7 @@ class Solution {
         var up = true, last: Int?
 
         for idx in arr.indices {
-            if let last = last {
+            if let last {
                 if !(up && arr[idx] > last || !up && arr[idx] < last) {
                     return false
                 }

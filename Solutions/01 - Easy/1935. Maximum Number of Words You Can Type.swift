@@ -6,7 +6,7 @@ class Solution {
         return text
             .components(separatedBy: " ")
             .map { Set($0).intersection(broken) }
-            .filter { $0.isEmpty }
+            .filter(\.isEmpty)
             .count
     }
 }

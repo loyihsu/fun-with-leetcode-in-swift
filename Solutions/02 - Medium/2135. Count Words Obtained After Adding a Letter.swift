@@ -14,7 +14,7 @@ class Solution {
 
     func hash(_ word: String) -> Int {
         // Hash the word into binary: (e.g. "ay" == 01000000000000000000000001)
-        return word.reduce(0) { $0 + converter[$1, default: 0] }
+        word.reduce(0) { $0 + converter[$1, default: 0] }
     }
 
     func wordCount(_ startWords: [String], _ targetWords: [String]) -> Int {

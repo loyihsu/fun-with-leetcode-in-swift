@@ -2,7 +2,7 @@
 
 class Solution {
     func log3(_ n: Double) -> Double {
-        return log(n) / log(3.0)
+        log(n) / log(3.0)
     }
 
     func isPowerOfThree(_ n: Int) -> Bool {
