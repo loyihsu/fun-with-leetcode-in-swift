@@ -21,6 +21,6 @@ class Codec {
 
     // Decodes a shortened URL to its original URL.
     func decode(_ shortUrl: String) -> String {
-        return urls[shortUrl]!
+        urls[shortUrl]!
     }
 }

@@ -9,7 +9,7 @@ class Solution {
     }
 
     func helper(_ number: Int) -> String {
-        return "\(map[number - 1 >= 0 ? number - 1 : 25]!)"
+        "\(map[number - 1 >= 0 ? number - 1 : 25]!)"
     }
 
     func convertToTitle(_ n: Int) -> String {

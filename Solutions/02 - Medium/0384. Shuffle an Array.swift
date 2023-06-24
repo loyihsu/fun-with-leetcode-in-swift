@@ -8,7 +8,7 @@ class Solution {
 
     /** Resets the array to its original configuration and return it. */
     func reset() -> [Int] {
-        return array
+        array
     }
 
     /** Returns a random shuffling of the array. */

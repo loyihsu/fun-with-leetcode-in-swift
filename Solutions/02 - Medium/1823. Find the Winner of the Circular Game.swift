@@ -14,7 +14,7 @@ class Solution {
         var first: ListNode?
         func insert(_ val: Int) {
             var newNode = ListNode(val)
-            if let first = first {
+            if let first {
                 var current: ListNode = first
                 while current.next !== first {
                     current = current.next!

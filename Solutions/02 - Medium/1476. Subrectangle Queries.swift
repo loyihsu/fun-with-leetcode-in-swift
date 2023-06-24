@@ -14,7 +14,7 @@ class SubrectangleQueries {
     }
 
     func getValue(_ row: Int, _ col: Int) -> Int {
-        return rectangleObject[row][col]
+        rectangleObject[row][col]
     }
 
     var rectangleObject: [[Int]]

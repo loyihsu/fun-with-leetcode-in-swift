@@ -6,7 +6,7 @@ class Solution {
         while let element = temp {
             if element.val != val {
                 let newNode = ListNode(element.val)
-                if let last = last {
+                if let last {
                     last.next = newNode
                 } else {
                     newList = newNode

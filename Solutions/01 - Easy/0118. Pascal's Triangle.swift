@@ -19,6 +19,6 @@ class Solution {
     }
 
     func generate(_ numRows: Int) -> [[Int]] {
-        return (1 ... numRows).map { generateRow($0) }
+        (1 ... numRows).map { generateRow($0) }
     }
 }

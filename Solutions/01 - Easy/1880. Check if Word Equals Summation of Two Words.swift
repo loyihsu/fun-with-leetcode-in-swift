@@ -9,6 +9,6 @@ class Solution {
     }
 
     func isSumEqual(_ firstWord: String, _ secondWord: String, _ targetWord: String) -> Bool {
-        return code(for: firstWord) + code(for: secondWord) == code(for: targetWord)
+        code(for: firstWord) + code(for: secondWord) == code(for: targetWord)
     }
 }

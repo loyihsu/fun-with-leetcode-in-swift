@@ -2,13 +2,13 @@
 
 extension Array {
     mutating func popFirst() -> Element? {
-        return isEmpty ? nil : removeFirst()
+        isEmpty ? nil : removeFirst()
     }
 }
 
 class Solution {
     func minDepth(_ root: TreeNode?) -> Int {
-        guard let root = root else { return 0 }
+        guard let root else { return 0 }
         var queue: [(node: TreeNode, depth: Int)] = [(root, 1)]
         while let first = queue.popFirst() {
             if first.node.left == nil, first.node.right == nil {

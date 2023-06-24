@@ -1,6 +1,6 @@
 // Problem: https://leetcode.com/problems/minimum-number-of-moves-to-seat-everyone/
 
-extension Array where Element == Int {
+extension [Int] {
     mutating func popMin() -> Int? {
         guard count > 0 else { return nil }
         var (offset, element) = (0, self[0])

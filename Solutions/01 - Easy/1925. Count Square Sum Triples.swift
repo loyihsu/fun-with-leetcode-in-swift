@@ -4,7 +4,7 @@ import Foundation
 
 class Solution {
     func isInteger(_ double: Double) -> Bool {
-        return Double(Int(double)) == double
+        Double(Int(double)) == double
     }
 
     func countTriples(_ n: Int) -> Int {

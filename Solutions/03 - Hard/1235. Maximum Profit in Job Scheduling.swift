@@ -2,7 +2,7 @@
 
 extension Array {
     subscript(safe idx: Int) -> Element? {
-        return idx < 0 || idx >= count ? nil : self[idx]
+        idx < 0 || idx >= count ? nil : self[idx]
     }
 }
 

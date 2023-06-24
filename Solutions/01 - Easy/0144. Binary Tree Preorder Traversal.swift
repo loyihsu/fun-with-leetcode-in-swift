@@ -2,7 +2,7 @@
 
 class Solution {
     func preorderTraversal(_ root: TreeNode?) -> [Int] {
-        guard let root = root else { return [] }
+        guard let root else { return [] }
         var output = [root.val]
         output += preorderTraversal(root.left)
         output += preorderTraversal(root.right)

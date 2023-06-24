@@ -2,7 +2,7 @@
 
 class Solution {
     func leap(_ year: Int) -> Bool {
-        return (year % 4 == 0 && year % 100 != 0) || year % 400 == 0
+        (year % 4 == 0 && year % 100 != 0) || year % 400 == 0
     }
 
     func dayOfTheWeek(_ day: Int, _ month: Int, _ year: Int) -> String {

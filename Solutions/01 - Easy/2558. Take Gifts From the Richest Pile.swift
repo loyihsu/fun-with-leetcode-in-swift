@@ -12,7 +12,7 @@ class Solution {
     }
 }
 
-extension Array where Element == Double {
+extension [Double] {
     mutating func sqrtMax(times: Int) -> Self {
         for _ in 0 ..< times {
             let max = findMax()
@@ -37,6 +37,6 @@ extension Array where Element == Double {
     }
 
     func max(_ lhs: Double, _ rhs: Double) -> Double {
-        return lhs >= rhs ? lhs : rhs
+        lhs >= rhs ? lhs : rhs
     }
 }
