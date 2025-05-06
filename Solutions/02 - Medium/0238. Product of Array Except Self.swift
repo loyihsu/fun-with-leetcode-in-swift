@@ -2,19 +2,26 @@
 
 class Solution {
     func productExceptSelf(_ nums: [Int]) -> [Int] {
-        var right = [Int](), output = [Int](), temp = 1
-        let ncount = nums.count
-
-        for index in 0 ..< ncount {
-            right.append(temp)
-            temp *= nums[ncount - index - 1]
+        let leftProduct = nums.reduce(into: [Int]()) {
+            let previous = $0.last ?? 1
+            $0.append(previous * $1)
         }
+        let rightProduct = Array(
+            nums
+                .reversed()
+                .reduce(into: [Int]()) {
+                    let previous = $0.last ?? 1
+                    $0.append(previous * $1)
+                }
+                .reversed()
+        )
 
-        temp = 1
+        var output = [Int](repeating: 0, count: nums.count)
 
-        for index in 0 ..< ncount {
-            output.append(temp * right[ncount - index - 1])
-            temp *= nums[index]
+        for index in output.indices {
+            let left = index - 1 >= 0 ? leftProduct[index - 1] : 1
+            let right = index + 1 < nums.count ? rightProduct[index + 1] : 1
+            output[index] = left * right
         }
 
         return output
