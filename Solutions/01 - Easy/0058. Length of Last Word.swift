@@ -3,8 +3,8 @@
 class Solution {
     func lengthOfLastWord(_ s: String) -> Int {
         var count = 0, space = false
-        s.forEach {
-            if $0 == " " {
+        for  in s {
+            if  == " " {
                 space = true
             } else if space == true {
                 count = 1

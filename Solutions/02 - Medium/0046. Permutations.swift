@@ -8,9 +8,9 @@ class Solution {
         for (index, value) in nums.enumerated() {
             var temp = nums
             temp.remove(at: index)
-            permute(temp).forEach {
+            for item in permute(temp) {
                 var cur = [value]
-                cur.append(contentsOf: $0)
+                cur.append(contentsOf: item)
                 output.append(cur)
             }
         }

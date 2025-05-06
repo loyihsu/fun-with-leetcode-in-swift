@@ -6,9 +6,9 @@ class Solution {
             return nums.first! == 0 ? 1 : 0
         }
         var sum = 0, max = -1
-        nums.forEach {
-            max = $0 > max ? $0 : max
-            sum += $0
+        for num in nums {
+            max = num > max ? num : max
+            sum += num
         }
         var diff = -sum
         for num in 0 ... max {

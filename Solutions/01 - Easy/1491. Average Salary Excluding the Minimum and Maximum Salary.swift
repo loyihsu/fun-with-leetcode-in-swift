@@ -3,13 +3,13 @@
 class Solution {
     func average(_ salary: [Int]) -> Double {
         var max = Int.min, min = Int.max, sum = 0, count = 0
-        salary.forEach {
-            sum += $0
-            if $0 > max {
-                max = $0
+        for item in salary {
+            sum += item
+            if item > max {
+                max = item
             }
-            if $0 < min {
-                min = $0
+            if item < min {
+                min = item
             }
             count += 1
         }

@@ -6,13 +6,13 @@ class Solution {
         var equal = [Int]()
         var greater = [Int]()
 
-        nums.forEach {
-            if $0 < pivot {
-                less.append($0)
-            } else if $0 == pivot {
-                equal.append($0)
+        for num in nums {
+            if num < pivot {
+                less.append(num)
+            } else if num == pivot {
+                equal.append(num)
             } else {
-                greater.append($0)
+                greater.append(num)
             }
         }
 

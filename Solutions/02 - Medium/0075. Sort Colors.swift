@@ -7,8 +7,12 @@ class Solution {
         let standard = nums[min]
 
         while i != j {
-            while nums[j] >= standard, i < j { j -= 1 }
-            while nums[i] <= standard, i < j { i += 1 }
+            while nums[j] >= standard, i < j {
+                j -= 1
+            }
+            while nums[i] <= standard, i < j {
+                i += 1
+            }
             if i < j {
                 var temp = nums[i]
                 nums[i] = nums[j]

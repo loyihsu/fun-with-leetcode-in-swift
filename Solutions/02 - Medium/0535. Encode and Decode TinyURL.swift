@@ -14,7 +14,9 @@ class Codec {
 
     func encode(_ longUrl: String) -> String {
         var s = createRandomString()
-        while urls[s] != nil { s = createRandomString() }
+        while urls[s] != nil {
+            s = createRandomString()
+        }
         urls["http://tinyurl.com/\(s)"] = longUrl
         return "http://tinyurl.com/\(s)"
     }

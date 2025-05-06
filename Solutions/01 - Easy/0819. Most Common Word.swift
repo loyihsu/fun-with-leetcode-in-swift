@@ -9,8 +9,10 @@ class Solution {
             map[word, default: 0] += 1
         }
 
-        for (key, value) in map.sorted { $0.value > $1.value } where !banned.contains(key) {
-            return key
+        for (key, value) in map.sorted {
+            $0.value > $1.value
+        } where !banned.contains(key) {
+            key
         }
         return ""
     }
