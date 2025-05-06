@@ -2,29 +2,25 @@
 
 class Solution {
     func lengthOfLongestSubstring(_ s: String) -> Int {
-        var cur = ""
-        var curCount = 0
+        let string = Array(s)
+        var lastEncounter = [Character: Int]()
+
+        var cursor = [Character]()
         var maxCount = 0
 
-        for c in s {
-            if cur.contains(c) == false {
-                cur.append(c)
-                curCount += 1
+        for (index, value) in string.enumerated() {
+            if !cursor.contains(value) {
+                cursor.append(value)
             } else {
-                maxCount = curCount > maxCount ? curCount : maxCount
-
-                if let pos = cur.firstIndex(of: c) {
-                    cur = "\(cur[cur.index(after: pos) ..< cur.endIndex])\(c)"
-                    curCount = cur.count
-                } else {
-                    cur = "\(c)"
-                    curCount = 1
+                if cursor.count > maxCount {
+                    maxCount = cursor.count
                 }
+                let lastEncounter = lastEncounter[value, default: index]
+                cursor = Array(string[lastEncounter + 1 ... index])
             }
+            lastEncounter[value] = index
         }
 
-        maxCount = curCount > maxCount ? curCount : maxCount
-
-        return maxCount
+        return max(maxCount, cursor.count)
     }
 }
