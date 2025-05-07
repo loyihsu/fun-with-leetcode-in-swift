@@ -1,28 +1,29 @@
 // Problem: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
 class Solution {
-    func createArray(from head: ListNode?) -> [Int] {
-        var output = [Int](), temp = head
-        while let current = temp {
-            output.append(current.val)
-            temp = current.next
-        }
-        return output
-    }
-
-    func createList(_ array: [Int]) -> ListNode? {
-        var output: ListNode?, index = array.count - 1
-        while index >= 0 {
-            var newNode = ListNode(array[index], output)
-            output = newNode
-            index -= 1
-        }
-        return output
-    }
-
     func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
-        var temp = createArray(from: head)
-        temp.remove(at: temp.count - n)
-        return createList(temp)
+        var fastCursor = head
+        var slowCursor = head
+        var counter = 0
+
+        while let fast = fastCursor {
+            if counter < n + 1 {
+                fastCursor = fast.next
+                counter += 1
+            } else {
+                fastCursor = fast.next
+                slowCursor = slowCursor?.next
+            }
+        }
+
+        var head = head
+
+        if counter == n + 1 {
+            slowCursor?.next = slowCursor?.next?.next
+        } else {
+            head = head?.next
+        }
+
+        return head
     }
 }
